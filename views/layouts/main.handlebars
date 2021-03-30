@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eat Out, Austin</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div>
+    <header>
+      <nav>
+          {{#if loggedIn}}
+          {{else}}
+          {{/if}}
+      </nav>
+      <h1>Eat Out, Austin</h1>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+    </footer>
+  </div>
+    {{#if loggedIn}}
+    {{/if}}
+</body>
+
+</html>
