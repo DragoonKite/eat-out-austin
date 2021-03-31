@@ -63,8 +63,8 @@ Every site focused on dining out has a list of places to try in any city, but to
 
 ## Contact
 Created by: <br>
-[Frank Depaulo](link) - feel free to contact me!<br>
-[Jason Fletcher](blueink38@yahoo.com) - feel free to contact me!<br>
-[Ramon Flowers](link) - feel free to contact me!<br>
-[Juan Nunez](link) - feel free to contact me!<br>
-[Cory Neel](link) - feel free to contact me!
+[Frank Depaulo](lihttps://dragoonkite.github.io/portfolio/nk) - feel free to contact me!<br>
+[Jason Fletcher](https://blueink38.github.io/new-portfolio/) - feel free to contact me!<br>
+[Ramon Flowers](https://rocketorangemen.github.io/Portfolio/) - feel free to contact me!<br>
+[Juan Nunez](https://jnunez1229.github.io/juan-nunez/#) - feel free to contact me!<br>
+[Cory Neel](https://cocobeware83.github.io/coryneel) - feel free to contact me!
