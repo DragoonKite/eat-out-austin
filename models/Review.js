@@ -33,7 +33,7 @@ Review.init(
         },
         //Actual review
         review_contents: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         //Aproval by admin

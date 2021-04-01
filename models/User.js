@@ -25,12 +25,12 @@ User.init(
             allowNull: false
         },
         //first name column
-        firstname: {
+        firstName: {
             type: DataTypes.STRING,
             allowNull: false
         },
         //last name column
-        lastname: {
+        lastName: {
             type: DataTypes.STRING,
             allowNull: false
         },
