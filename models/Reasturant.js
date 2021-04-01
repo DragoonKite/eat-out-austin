@@ -21,6 +21,9 @@ Restaurant.init (
         //Restaurant phone number
         res_phone: {
             type: DataTypes.INTEGER,
+            validate: {
+                len: [10]
+            }
         },
         //Restaurant website
         res_website: {
