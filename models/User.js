@@ -20,7 +20,17 @@ User.init(
             autoIncrement: true
         },
         //username column
-        username: {
+        displayname: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        //first name column
+        firstname: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        //last name column
+        lastname: {
             type: DataTypes.STRING,
             allowNull: false
         },
