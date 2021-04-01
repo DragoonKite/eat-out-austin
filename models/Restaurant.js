@@ -26,6 +26,36 @@ Restaurant.init (
             validate: {
               isEmail: true
             }
+        },
+        res_address: {
+                type: DataTypes.STRING
+        },
+        food_style: {
+            type: DataTypes.STRING
+        },
+        brick_mortar: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        trailer: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        delivery: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        takeout_curbside: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        reservations: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        on_site_parking: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         }
     },
     {
