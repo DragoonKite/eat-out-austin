@@ -13,26 +13,33 @@ Restaurant.init (
             primaryKey: true,
             autoIncrement: true
         },
+        //Restaurant name
         res_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
+        //Restaurant phone number
         res_phone: {
             type: DataTypes.INTEGER,
         },
-        res_email: {
+        //Restaurant website
+        res_website: {
             type: DataTypes.STRING,
             unique: true,
             validate: {
-              isEmail: true
-            }
+              isurl: true
+            },
+            defaultValue: "None"
         },
+        //Restaurant address
         res_address: {
                 type: DataTypes.STRING
         },
+        //Restaurant style of food
         food_style: {
             type: DataTypes.STRING
         },
+        //Type of establishment start 
         brick_mortar: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
@@ -41,6 +48,8 @@ Restaurant.init (
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
+        //Type of establishment end
+        //Service options start
         delivery: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
@@ -57,6 +66,7 @@ Restaurant.init (
             type: DataTypes.BOOLEAN,
             defaultValue: false
         }
+        //Service options end
     },
     {
         hooks: {},
