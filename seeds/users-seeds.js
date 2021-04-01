@@ -3,70 +3,70 @@ const {User} = require('../models');
 
 const userData = [
    {
-    displayname: 'Cleetus',
+    displayName: 'Cleetus',
     firstName: 'Cleet',
     lastName: 'Us',
     email: 'cleetus@hotmail.com',
     password: 'password123'
   },
   {
-    displayname: 'Anita',
+    displayName: 'Anita',
     firstName: 'Anita',
     lastName: 'Richard',
     email: 'anita@gmail.com',
     password: 'password123'
   },
   {
-    displayname: 'Cory',
+    displayName: 'Cory',
     firstName: 'Cory',
     lastName: 'Neel',
     email: 'cory@bootcamp.com',
     password: 'password123'
   },
   {
-    displayname: 'Juan',
+    displayName: 'Juan',
     firstName: 'Juan',
     lastName: 'Nunez',
     email: 'juan@ut.com',
     password: 'password123'
   },
   {
-    displayname: 'Frank',
+    displayName: 'Frank',
     firstName: 'Frank',
     lastName: 'D',
     email: 'frank@bing.com',
     password: 'password123'
   },
   {
-    displayname: 'Ramon',
+    displayName: 'Ramon',
     firstName: 'Ramon',
     lastName: 'Flowers',
     email: 'flowers@hotmail.com',
     password: 'password123'
   },
   {
-    displayname: 'George',
+    displayName: 'George',
     firstName: 'George',
     lastName: 'Costanza',
     email: 'george@33.com',
     password: 'password123'
   },
   {
-    displayname: 'Lilly',
+    displayName: 'Lilly',
     firstName: 'Lilly',
     lastName: 'Ramaboea',
     email: 'lilly@sa.com',
     password: 'password123'
   },
   {
-    displayname: 'Baker',
+    displayName: 'Baker',
     firstName: 'Baker',
     lastName: 'Mayfield',
     email: 'baker@mayfield.com',
     password: 'password123'
   },
   {
-    displayname: 'Ruth',
+    displayName: 'Ruth',
     firstName: 'Ruth',
     lastName: 'Baby',
     email: 'ruth@google.com',
