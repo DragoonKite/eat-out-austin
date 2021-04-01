@@ -211,7 +211,7 @@ const restaurantData = [
     {				
         res_name:	'Taqueria Morales',
         res_phone: 	'5129064933',			
-        res_website:	None,			
+        res_website:	'None',			
         res_address:	'1415 W William Cannon'	,		
         food_style:	'Tacos - Mexican',							
         trailer:	true,					
