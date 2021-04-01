@@ -17,7 +17,7 @@ Review.belongsTo(User, {
     }
 );
 
-Review.hasOne(Restaurant, {
+Review.belongsTo(Restaurant, {
         foreignKey: 'res_reviewed'
     }
 );
