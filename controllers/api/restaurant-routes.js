@@ -6,25 +6,7 @@ const withAuth = require('../../utils/auth');
 
 // get all restaurants
 router.get('/', (req, res) => {
-  Restaurant.findAll({
-    order: [['created_at', 'DESC']],
-    include: [
-      // include reviews from each restaurant
-      {
-        model: Review,
-        attributes: ['id', 'res_reviewed', 'review_content', 'review_approval'],
-        include: {
-          model: User,
-          attributes: ['displayname, firstname, lastname, email']
-        }
-      },
-    //   include user
-      {
-        model: User,
-        attributes: ['displayname, firstname, lastname, email']
-    }
-    ]
-   })
+  Restaurant.findAll()
    .then(restData => res.json(restData))
    .catch(err => {
      console.log(err);
@@ -37,23 +19,7 @@ router.get('/:id', (req, res) => {
     Restaurant.findOne({
       where: {
         id: req.params.id
-      },
-      include: [
-          //include reviews for restaurant
-        {
-            model: Review,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-              model: User,
-              attributes: ['displayname, firstname, lastname, email']
-            }
-        },
-        //   include user
-        {
-          model: User,
-          attributes: ['displayname, firstname, lastname, email']
-        }
-      ]
+      }
     })
       .then(restData => {
         if (!restData) {
