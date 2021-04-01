@@ -32,7 +32,7 @@ Review.init(
             }
         },
         //Actual review
-        review_contents: {
+        review_content: {
             type: DataTypes.TEXT,
             allowNull: false
         },

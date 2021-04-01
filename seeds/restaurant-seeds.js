@@ -57,7 +57,7 @@ const restaurantData = [
     },
     {		
         res_name:	'Loro',
-        res_phone:	'51291648558',			
+        res_phone:	'5129164858',			
         res_website: 	'www.loroeats.com',			
         res_address:	'2115 South Lamar Blvd',			
         food_style:	'Asian inspired TX BBQ & Smokehouse',						
@@ -211,7 +211,7 @@ const restaurantData = [
     {				
         res_name:	'Taqueria Morales',
         res_phone: 	'5129064933',			
-        res_website:	None,			
+        res_website:	'None',			
         res_address:	'1415 W William Cannon'	,		
         food_style:	'Tacos - Mexican',							
         trailer:	true,					

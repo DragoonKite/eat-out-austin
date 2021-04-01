@@ -20,7 +20,7 @@ Restaurant.init (
         },
         //Restaurant phone number
         res_phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             validate: {
                 len: [10]
             }
