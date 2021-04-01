@@ -568,6 +568,7 @@ pre code {
   flex-wrap: wrap;
   margin-right: -1.5rem;
   margin-left: -1.5rem;
+  justify-content: space-around;
 }
 
 .no-gutters {
@@ -10231,6 +10232,7 @@ form .row:first-child .floating-label-form-group {
 
 /* styling for drop up */
 .dropbtn {
+    border-radius: 25px;
     background-color: #1abc9c;
     color: white;
     padding: 16px;
@@ -10239,7 +10241,7 @@ form .row:first-child .floating-label-form-group {
   }
   
   .dropup {
-    position: relative;
+    position: center;
     display: inline-block;
   }
   
