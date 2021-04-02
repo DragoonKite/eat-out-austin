@@ -19,8 +19,18 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        //username column
-        username: {
+        //displayName column
+        displayName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        //first name column
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        //last name column
+        lastName: {
             type: DataTypes.STRING,
             allowNull: false
         },
