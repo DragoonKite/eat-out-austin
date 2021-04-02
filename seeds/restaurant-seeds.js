@@ -3,6 +3,7 @@ const {Restaurant} = require('../models');
 
 const restaurantData = [
     {
+        id: 1,
         res_name: 'Odd Duck',
         res_phone: '5124336521',
         res_website: 'www.oddduckaustin.com',			

@@ -19,11 +19,21 @@ router.get('/:id', (req, res) => {
     Restaurant.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [
+        {
+          model: Review,
+          attributes: ['review_content'],
+          include: {
+            model: User,
+            attributes: ['displayName']
+          }
+        }
+      ]
     })
       .then(restData => {
         if (!restData) {
-          res.status(404).json({ message: 'No post found with this id' });
+          res.status(404).json({ message: 'No restaurant found with this id' });
           return;
         }
         res.json(restData);
