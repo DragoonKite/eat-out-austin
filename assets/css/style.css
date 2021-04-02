@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color:rgba(254, 249, 216);
+  --secondary-color:tan;
+  --tertiary-color:rgb(251, 171, 51);
+  --text-color:rgb(136, 23, 7);
+  --accent-color:lightskyblue;
+}
+
+body {
+  background-color: var(--primary-color);
+
+}
+
+header {
+
+}
+
+
+/*
+<h1>Salad</h1>
+<h2 style="background-color:rgb(55, 103, 5);">green bean</h2>
+<h2 style="background-color:rgb(210, 225, 144);">celery</h2>
+<h2 style="background-color:rgb(166, 1, 2);">tomato</h2>
+<h2 style="background-color:rgb(242, 154, 2);">carrot</h2>
+
+<h1>Rattatuile</h1>
+<h2 style="background-color:rgb(92, 41, 95);">eggplant</h2>
+<h2 style="background-color:rgb(121, 163, 32);">zucchini</h2>
+<h2 style="background-color:rgb(219, 185, 93);">yellow squash</h2>
+<h2 style="background-color:rgb(165, 32, 8);">stewed tomato</h2>
+*/
+
