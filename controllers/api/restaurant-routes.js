@@ -19,7 +19,13 @@ router.get('/:id', (req, res) => {
     Restaurant.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [
+        {
+          model: Review,
+          attributes: ['review_content'],
+        }
+      ]
     })
       .then(restData => {
         if (!restData) {
