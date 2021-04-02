@@ -24,6 +24,10 @@ router.get('/:id', (req, res) => {
         {
           model: Review,
           attributes: ['review_content'],
+          include: {
+            model: User,
+            attributes: ['displayName']
+          }
         }
       ]
     })
