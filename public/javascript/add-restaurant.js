@@ -35,6 +35,7 @@ async function newRestaurantHandler(event) {
 
     if (response.ok) {
         document.location.replace('/homepage');
+        alert('Thank you for your submission!')
     } else {
         alert(response.statusText);
     }
