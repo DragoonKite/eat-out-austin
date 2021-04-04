@@ -5,7 +5,6 @@ const { Restaurant, User, Review} = require('../models');
 router.get('/', (req, res) => {
     Restaurant.findAll()
     .then(homeData => {
-        const posts = homeData.map(post => post.get({ plain: true }));
         res.render('homepage');
       })
       .catch(err => {
