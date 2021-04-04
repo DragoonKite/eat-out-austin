@@ -15,7 +15,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //Express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
+
+// // Add bootstrap
+// app.use("/bootstrap",express.static(__dirname+"/node_modules/bootstrap/dist"));
 
 //Express Handlebars
 app.engine('handlebars', hbs.engine);

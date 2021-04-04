@@ -3,6 +3,7 @@ const {Review} = require('../models');
 
 const reviewData = [
     {
+        id: 1,
         user_id: 1,
         res_reviewed: 1,
         review_content: "This locally sourced farm to table restaurant offers an ever-changing menu full of inventive and delicious shared plates. Come with a group so you can try more dishes! Tequila fans have to try their draft Paloma, it's a creative twist on a classic. If you're feeling bold, try the chicken fried fish head! On-site parking makes this an easy spot to visit. It's central location makes it pretty easy to ride-share to as well.", 
@@ -107,7 +108,7 @@ const reviewData = [
     {
         user_id: 8,
         res_reviewed: 18,
-        review_content: "Deep in south Austin just outside a divey neighborhood bar you will find a depilated trailer from which the most delicious smells emanate. This is Austin Rotisserie, they are getting back to classic French roots with simple rotisserie chicken to order. You can get pieces, you can get the half chicken, you can get the whole bird if that's what you're looking for. There are sides of simple arugula salad and baguettes if that's what your heart desires. But what you must never forget are their tiny potatoes slowly cooked in the juices of the slowly rotating birds above. These little pommes de terre are what dreams are made of! Get it delivered, go get it yourself and grab a quick drink at the hole in the wall bar, but whatever you do, don't forget the potatoes!",
+        review_content: "Deep in south Austin just outside a divey neighborhood bar you will find a dilapidated trailer from which the most delicious smells emanate. This is Austin Rotisserie, they are getting back to classic French roots with simple rotisserie chicken to order. You can get pieces, you can get the half chicken, you can get the whole bird if that's what you're looking for. There are sides of simple arugula salad and baguettes if that's what your heart desires. But what you must never forget are their tiny potatoes slowly cooked in the juices of the slowly rotating birds above. These little pommes de terre are what dreams are made of! Get it delivered, go get it yourself and grab a quick drink at the hole in the wall bar, but whatever you do, don't forget the potatoes!",
         review_approval: true,
     },
     {
