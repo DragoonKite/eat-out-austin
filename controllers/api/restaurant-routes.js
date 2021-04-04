@@ -14,6 +14,11 @@ router.get('/', (req, res) => {
    });
 });
 
+// Add style to page
+router.get('/style.css', function(req, res) {
+  res.sendFile(__dirname + "/" + "style.css");
+});
+
 // Find a specific restaurant
 router.get('/:id', (req, res) => {
     Restaurant.findOne({
