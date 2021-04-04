@@ -1,44 +1,44 @@
-async function newRestaurantHandler(event) {
+async function newFormHandler(event) {
     event.preventDefault();
-  
-    const name = document.querySelector('input[name="res-name"]').value;
-    const phone = document.querySelector('input[name="res-phone"]').value;
-    const website = document.querySelector('input[name="res-website"]').value;
-    const address = document.querySelector('input[name="res-address"]').value;
-    const style = document.querySelector('input[name="food-style"]').value;
-    const brickMortar = document.querySelector('input[name="brick-mortar"]').value;
-    const trailer = document.querySelector('input[name="trailer"]').value;
-    const delivery = document.querySelector('input[name="delivery"]').value;
-    const takeout = document.querySelector('input[name="takeout-curbside"]').value;
-    const reservations = document.querySelector('input[name="reservations"]').value;
-    const parking = document.querySelector('input[name="on-site-parking"]').value;
-  
-    const response = await fetch(`/api/restaurant`, {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        phone,
-        website,
-        address,
-        style,
+
+    const resName = document.querySelector('input[name="restaurant-name"]').value;
+    const resPhone = document.querySelector('input[name="restaurant-phone"]').value;
+    const resWebSite = document.querySelector('input[name="restaurant-site"]').value;
+    const resAddress = document.querySelector('input[name="restaurant-address"]').value;
+    const foodStyle = document.querySelector('input[name="food-style"]').value;
+    const brickMortar = document.querySelector('input[name="brick-mortar"]').checked;
+    const trailer = document.querySelector('input[name="trailer"]').checked;
+    const delivery = document.querySelector('input[name="delivery"]').checked;
+    const takeoutCurbside = document.querySelector('input[name="takeout-curbside"]').checked;
+    const reservations = document.querySelector('input[name="reservations"]').checked;
+    const onSiteParking = document.querySelector('input[name="on-site-parking"]').checked;
+
+    const response = await fetch(`/api/posts`, {
+        method: 'POST',
+        body: JSON.stringify({
+        resName,
+        resPhone,
+        resWebSite,
+        resAddress,
+        foodStyle,
         brickMortar,
         trailer,
         delivery,
-        takeout,
+        takeoutCurbside,
         reservations,
-        parking
-      }),
-      headers: {
+        onSiteParking
+        }),
+        headers: {
         'Content-Type': 'application/json'
-      }
+        }
     });
-  
+
     if (response.ok) {
-      document.location.replace('/');
-      alert('Thank you for your submission')
+        document.location.replace('/homepage');
+        alert('Thank you for your submission!')
     } else {
-      alert(response.statusText);
+        alert(response.statusText);
     }
-  }
-  
-  document.querySelector('.new-restaurant').addEventListener('submit', newRestaurantHandler);
+}
+
+document.querySelector('.new-restaurant-form').addEventListener('submit', newFormHandler);
