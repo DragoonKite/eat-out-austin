@@ -1,4 +1,4 @@
-async function newFormHandler(event) {
+async function newRestaurantHandler(event) {
     event.preventDefault();
 
     const resName = document.querySelector('input[name="restaurant-name"]').value;
@@ -13,7 +13,7 @@ async function newFormHandler(event) {
     const reservations = document.querySelector('input[name="reservations"]').checked;
     const onSiteParking = document.querySelector('input[name="on-site-parking"]').checked;
 
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/restaurant`, {
         method: 'POST',
         body: JSON.stringify({
         resName,
@@ -40,4 +40,4 @@ async function newFormHandler(event) {
     }
 }
 
-document.querySelector('.new-restaurant-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-restaurant-form').addEventListener('submit', newRestaurantHandler);
