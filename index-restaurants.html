@@ -8,7 +8,8 @@
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- CSS (includes Bootstrap)-->
         <link href="./assets/css/style.css" rel="stylesheet" />
@@ -24,26 +25,22 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <div class="dropdown">
-                            <button class="btn2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Choose Another Style
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#farm-to-table">Farm To Table</a>
-                              <a class="dropdown-item" href="#southern">Southern</a>
-                              <a class="dropdown-item" href="#veggie">Vegan and Vegetarian</a>
-                              <a class="dropdown-item" href="#asian">Asian & Asian Fusion</a>
-                              <a class="dropdown-item" href="#bbq">BBQ</a>
-                              <a class="dropdown-item" href="#seafood">Seafood</a>
-                              <a class="dropdown-item" href="#latin-american">Latin American</a>
-                              <a class="dropdown-item" href="#french">French</a>
-                              <a class="dropdown-item" href="#italian">Italian</a>
-                              <a class="dropdown-item" href="#indian">Indian</a>
-                              <a class="dropdown-item" href="#japanese">Japanese-Sushi</a>
-                              <a class="dropdown-item" href="#burgers">Burgers</a>
-                              
-
-                            </div>
+                        <div class ="rest-drop">
+                            <select class="form-select" aria-label="Default select example">
+                            <option selected>Choose Another Style</option>
+                            <option value="1">Farm To Table</option>
+                            <option value="2">Southern</option>
+                            <option value="3">Vegetarian & Vegan</option>
+                            <option value="4">Asian & Asian Fusion</option>
+                            <option value="5">BBQ</option>
+                            <option value="6">Seafood</option>
+                            <option value="7">Latin</option>
+                            <option value="8">French</option>
+                            <option value="9">Italian</option>
+                            <option value="10">Indian</option>
+                            <option value="11">Japanese-Sushi</option>
+                            <option value="12">Burgers</option>
+                          </select>
                           </div>
                     </ul>
                 </div>
@@ -71,6 +68,95 @@
                     <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+
+            <!-- Start Aviary Carousel -->
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <h2>Aviary</h2>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/aviary/aviary-front.jpg" class="d-block w-100" id ="imageSize" alt="Aviary Front">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/aviary/aviary-interior.jpg" class="d-block w-100" alt="Aviary Interior">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/aviary/aviary-food.jpg" class="d-block w-100" alt="Aviary Food">
+                  </div>
+                </div>
+              </div>
+            <!-- End Aviary Carousel -->
+            <!-- Start Aviary Card -->
+
+            <
+            <br>
+
+            <!-- Start Barley Swine Carousel -->
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <h2>Barley Swine</h2>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/barley-swine/barley-swine-front.jpg" class="d-block w-100" id ="imageSize" alt="Barley Swine Front">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/barley-swine/barley-swine-interior.jpg" class="d-block w-100" alt="Barley Swine Interior">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/barley-swine/barley-swine-food.jpg" class="d-block w-100" alt="Barley Swine Food">
+                  </div>
+                </div>
+              </div>
+            <!-- End Barley Swine Carousel -->
+            <br>
+            <!-- Start Lenoir Carousel -->
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <h2>Lenoir</h2>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/lenoir/lenoir-front.jpg" class="d-block w-100" id ="imageSize" alt="Lenoir Front">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/lenoir/lenoir-interior.jpg" class="d-block w-100" alt="Lenoir Interior">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/lenoir/lenoir-food.jpg" class="d-block w-100" alt="Lenoir Food">
+                  </div>
+                </div>
+              </div>
+            <!-- End Lenoir Carousel -->
+            <br>
+            <!-- Start Sour Duck Carousel -->
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <h2>Sour Duck</h2>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/sour-duck/sour-duck-front.jpg" class="d-block w-100" id ="imageSize" alt="Sour Duck Front">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/sour-duck/sour-duck-interior.jpg" class="d-block w-100" alt="Sour Duck Interior">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/sour-duck/sour-duck-food.jpg" class="d-block w-100" alt="Sour Duck Food">
+                  </div>
+                </div>
+              </div>
+            <!-- End Sour Duck Carousel -->
+            <br>
+            <!-- Start Odd Duck Carousel -->
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <h2>Odd Duck</h2>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/odd-duck/odd-duck-front.jpg" class="d-block w-100" id ="imageSize" alt="Odd Duck Front">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/odd-duck/odd-duck-interior.jpg" class="d-block w-100" alt="Odd Duck Interior">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/odd-duck/odd-duck-food.jpg" class="d-block w-100" alt="Odd Duck Food">
+                  </div>
+                </div>
+              </div>
+            <!-- End Odd Duck Carousel -->
         </section>
         <!-- End Farm to Table -->
 
