@@ -14,10 +14,20 @@ router.get('/', (req, res) => {
    });
 });
 
-// Add style to page
-// router.get('/style.css', function(req, res) {
-//   res.sendFile(__dirname + "/" + "style.css");
-// });
+router.get('/food-style', (req, res) => {
+  Restaurant.findAll(
+    {
+        where: {
+          food_style : req.body.food_style
+        }
+    }
+  )
+   .then(restData => res.json(restData))
+   .catch(err => {
+     console.log(err);
+     res.status(500).json(err);
+   });
+})
 
 // Find a specific restaurant
 router.get('/:id', (req, res) => {
