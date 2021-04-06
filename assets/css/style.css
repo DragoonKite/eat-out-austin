@@ -4796,6 +4796,11 @@ a.close.disabled {
   justify-content: flex-end;
 }
 
+.leftSide {
+  display: flex;
+  justify-content: flex-start;
+}
+
 @-webkit-keyframes spinner-border {
   to {
     transform: rotate(360deg);
