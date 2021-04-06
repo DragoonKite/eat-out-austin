@@ -4786,6 +4786,16 @@ a.close.disabled {
   text-align: center;
 }
 
+.leftSide {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rightSide {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @-webkit-keyframes spinner-border {
   to {
     transform: rotate(360deg);
