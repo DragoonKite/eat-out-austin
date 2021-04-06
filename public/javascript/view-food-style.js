@@ -1,7 +1,7 @@
 async function foodStyleHandler(event) {
     event.preventDefault();
 
-    let food_style = document.querySelector('.dropdown-menu').options[selctedIndex].value
+    let food_style = document.querySelector('.dropdown-menu').options[selectedIndex].value
 
     const response = await fetch('/api/restaurant/${food-style}', {
         method: 'GET',
