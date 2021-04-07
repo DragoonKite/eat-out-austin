@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { Restaurant, User, Review } = require("../../models");
 const withAuth = require('../../utils/auth');
 
@@ -6,43 +7,59 @@ const withAuth = require('../../utils/auth');
 
 // get all restaurants
 router.get('/', (req, res) => {
-  Restaurant.findAll()
-   .then(restData => res.json(restData))
-   .catch(err => {
-     console.log(err);
-     res.status(500).json(err);
-   });
-});
-
-// Find a specific restaurant
-router.get('/:id', (req, res) => {
-    Restaurant.findOne({
-      where: {
-        id: req.params.id
-      },
-      include: [
-        {
-          model: Review,
-          attributes: ['review_content'],
-          include: {
-            model: User,
-            attributes: ['displayName']
-          }
-        }
-      ]
-    })
-      .then(restData => {
-        if (!restData) {
-          res.status(404).json({ message: 'No restaurant found with this id' });
-          return;
-        }
-        res.json(restData);
+    Restaurant.findAll()
+    .then(homeData => {
+        res.render('restaurant');
+        // res.json(homeData);
       })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
-});
+  });
+
+// Find a specific restaurant
+// router.get('/:id', (req, res) => {
+//     Restaurant.findOne({
+//       where: {
+//         id: req.params.id
+//       },
+//       include: [
+//         {
+//           model: Review,
+//           attributes: ['review_content'],
+//           include: {
+//             model: User,
+//             attributes: ['displayName']
+//           }
+            
+// router.get('/:id', (req, res) => {
+//     Restaurant.findOne({
+//     attributes: { exclude: ['password'] },
+//     where: {
+//       id: req.params.id
+//     }})
+//     .then(homeData => {
+//         res.render('restaurant');
+//     });
+//   });
+  
+//         }
+//       ]
+//     })
+//       .then(restData => {
+//         res.render('restaurant');
+//         if (!restData) {
+//           res.status(404).json({ message: 'No restaurant found with this id' });
+//           return;
+//         }
+//       })
+
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+// });
 
 
 // create restaurant

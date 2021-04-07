@@ -14,17 +14,8 @@ router.get('/', (req, res) => {
       });
   });
 
-  
-router.get('/:id', (req, res) => {
-    Restaurant.findOne({
-    attributes: { exclude: ['password'] },
-    where: {
-      id: req.params.id
-    }})
-    .then(homeData => {
+  router.get('/restaurant', (req, res) => {
         res.render('restaurant');
-    });
   });
-  
 
   module.exports = router;
