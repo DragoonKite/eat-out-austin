@@ -51,7 +51,7 @@ const restaurantData = [
     },
     {
         id: 5,
-        res_name:	'Bouldin Creek Café',
+        res_name:	'Bouldin Creek Cafe',
         res_phone:	'5124161601',			
         res_website:	'www.bouldincreekcafe.com',			
         res_address:	'1900 South 1st Street',			
