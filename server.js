@@ -14,6 +14,13 @@ const liveReloadServer = livereload.createServer();
 
 liveReloadServer.watch(path.join(__dirname, 'public'));
 
+
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/");
+  }, 100);
+});
+
 const app = express();
 app.use(connectLivereload());
 const PORT = process.env.PORT || 3001;
