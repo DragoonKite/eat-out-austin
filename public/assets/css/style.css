@@ -5,6 +5,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'Gafata', sans-serif;
 }
 
 html {
@@ -4627,7 +4628,9 @@ a.close.disabled {
 .carousel {
   position: relative;
   width: 40vw;
+  min-width: 20vw;
   height: 65vh;
+  min-height: 30vh;
 }
 
 .carousel.pointer-event {
