@@ -59,10 +59,10 @@
                     <div class="divider-custom-line"></div>
                 </div>
             <!-- Start Aviary -->
-            <div class="container-fluid">
+            {{!-- <div class="container-fluid">
               <div class="row">
                 <!-- Start Carousel -->
-                <div class="carousel slide col-md-6" data-ride="carousel">
+                <div class="carousel slide col-md-5" data-ride="carousel">
                   <h2>Aviary</h2>
                   <div class="carousel-inner leftSide">
                     <div class="carousel-item active">
@@ -100,8 +100,10 @@
             </div>
             <!-- End Aviary -->
             <br>
-            <br>
-
+            <br> --}}
+          {{#each restaurant as |restaurant|}}
+          {{> restaurant-info restaurant}}
+          {{/each}}
 
             <!-- Start Barley Swine  -->
             <div class="container">
