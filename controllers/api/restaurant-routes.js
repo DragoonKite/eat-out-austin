@@ -18,50 +18,6 @@ router.get('/', (req, res) => {
       });
   });
 
-// Find a specific restaurant
-// router.get('/:id', (req, res) => {
-//     Restaurant.findOne({
-//       where: {
-//         id: req.params.id
-//       },
-//       include: [
-//         {
-//           model: Review,
-//           attributes: ['review_content'],
-//           include: {
-//             model: User,
-//             attributes: ['displayName']
-//           }
-            
-// router.get('/:id', (req, res) => {
-//     Restaurant.findOne({
-//     attributes: { exclude: ['password'] },
-//     where: {
-//       id: req.params.id
-//     }})
-//     .then(homeData => {
-//         res.render('restaurant');
-//     });
-//   });
-  
-//         }
-//       ]
-//     })
-//       .then(restData => {
-//         res.render('restaurant');
-//         if (!restData) {
-//           res.status(404).json({ message: 'No restaurant found with this id' });
-//           return;
-//         }
-//       })
-
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-// });
-
-
 // create restaurant
 router.post('/', withAuth, (req, res) => {
 
