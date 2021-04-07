@@ -4814,9 +4814,9 @@ a.close.disabled {
   justify-content: flex-end;
 }
 
-.leftSide {
-  display: flex;
-  justify-content: flex-start;
+.tealCard {
+  background-color: whitesmoke;
+  color: rgb(44,61,61);
 }
 
 @-webkit-keyframes spinner-border {
