@@ -21,17 +21,39 @@
                 <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
                   <div class="card-body">
                     <h5 class="card-title">{{res_name}}</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rerum sint qui cum quam expedita consequatur! Expedita rerum vero sequi quidem dolorum sapiente reiciendis incidunt qui, hic animi consectetur blanditiis.</p>
+                    <p class="card-text">{{ review_content }}</p>
                   </div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">brick/trailer</li>
-                    <li class="list-group-item">delivery/curbside/takeout</li>
-                    <li class="list-group-item">Reservations</li>
-                    <li class="list-group-item">Parking</li>
+                    
+                    {{#if brick_mortar }}
+                    <li class="list-group-item">Brick/Trailer: Yes</li>
+                    {{ else }}
+                    <li class="list-group-item">Brick/Trailer: No</li>
+                    {{/if}}
+
+
+                    {{#if delivery }}
+                    <li class="list-group-item">Delivery/Takeout/Curbside: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Delivery/Takeout/Curbside: No</li>
+                    {{/if}}
+
+                    {{#if reservations }}
+                    <li class="list-group-item">Reservations: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Reservations: No</li>
+                    {{/if}}
+
+                    {{#if on_site_parking }}
+                    <li class="list-group-item">Parking: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Parking: No</li>
+                    {{/if}}
+
                     <li class="list-group-item">{{res_phone}}</li>
                   </ul>
                   <div class="card-body">
-                    <a href="#" class="card-link">Restaurant Website</a>
+                    <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
                     <a href="#" class="card-link">Directions</a>
                   </div>
                 </div>
