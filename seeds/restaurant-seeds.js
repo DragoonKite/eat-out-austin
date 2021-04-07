@@ -15,6 +15,7 @@ const restaurantData = [
         on_site_parking: true		
     },
     {
+        id: 2,
         res_name:	'Sour Duck',
         res_phone:	'5123945776',
         res_website:	'www.sourduckmarket.com',			
@@ -25,6 +26,7 @@ const restaurantData = [
         on_site_parking: true,		
     },
     {
+        id: 3,
         res_name:	'Barley Swine',	
         res_phone:	'5123948150',		
         res_website: 'www.barleyswine.com',		
@@ -36,6 +38,7 @@ const restaurantData = [
         on_site_parking:	true,		
     },
     {
+        id: 4,
         res_name: 'Olamaie',
         res_phone:	'5124742796',		
         res_website:	'www.olamaieaustin.com',		
@@ -47,6 +50,7 @@ const restaurantData = [
         on_site_parking:	true,		
     },
     {
+        id: 5,
         res_name:	'Bouldin Creek Café',
         res_phone:	'5124161601',			
         res_website:	'www.bouldincreekcafe.com',			
@@ -56,7 +60,8 @@ const restaurantData = [
         takeout_curbside:	true,						
         on_site_parking:	true,			
     },
-    {		
+    {	
+        id: 6,	
         res_name:	'Loro',
         res_phone:	'5129164858',			
         res_website: 	'www.loroeats.com',			
@@ -67,7 +72,8 @@ const restaurantData = [
         takeout_curbside:	true,					
         on_site_parking:	true,			
     },
-    {			
+    {	
+        id: 7,		
         res_name:	'Aviary',
         res_phone:	'5129164445',		
         res_website:	'www.aviarywinekitchen.com',			
@@ -80,6 +86,7 @@ const restaurantData = [
         on_site_parking:	true,			
     },
     {			
+        id: 8,
         res_name:	'Lin Asian Bar + Dim Sum',
         res_phone:	'5124745107',			
         res_website:	'www.linasianbar.com',			
@@ -91,7 +98,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking:	true,			
     },
-    {			
+    {	
+        id: 9,		
         res_name:	'Lamberts',
         res_phone:	'5124941500',			
         res_website:	'www.lambertsaustin.com',			
@@ -102,7 +110,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking: true,			
     },
-    {			
+    {	
+        id: 10,		
         res_name:	'Perlas',
         res_phone:	'5122917300',			
         res_website:	'www.perlasaustin.com',			
@@ -113,7 +122,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking: true,			
     },
-    {				
+    {	
+        id: 11,			
         res_name:	'Lenoir',
         res_phone:	'5122159778',			
         res_website:	'www.lenoirrestaurant.com',			
@@ -124,7 +134,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking:	true,			
     },
-    {				
+    {	
+        id: 12,			
         res_name:	'Suerte',
         res_phone:	'5129530092',			
         res_website:	'www.suerteatx.com',			
@@ -135,7 +146,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking:	true,			
     },
-    {				
+    {		
+        id: 13,		
         res_name:	'Justines Brasserie',
         res_phone:	'5123852900',			
         res_website:	'www.justines1937.com',			
@@ -146,7 +158,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking:	true,			
     },
-    {			
+    {		
+        id: 14,	
         res_name:	'Franklin BBQ',
         res_phone:	'5126531187',			
         res_website:	'www.franklinbbq.com',			
@@ -156,7 +169,8 @@ const restaurantData = [
         takeout_curbside:	true,					
         on_site_parking:	true,			
     },
-    {			
+    {		
+        id: 15,	
         res_name:	'Intero',
         res_phone:	'5125994052',			
         res_website:	'www.interorestaurant.com',			
@@ -167,7 +181,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking:	true,			
     },
-    {			
+    {		
+        id: 16,	
         res_name:	'The Clay Pit',
         res_phone:	'5123225131',			
         res_website:	'www.claypit.com',			
@@ -179,7 +194,8 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking:	true,		
     },
-    {				
+    {		
+        id: 17,		
         res_name:	'Musashino Sushi Daikoro',
         res_phone:	'5127958593',			
         res_website:	'www.musashinoatx.com',			
@@ -189,7 +205,7 @@ const restaurantData = [
         reservations:	true,			
         on_site_parking:	true,			
     },
-    {				
+    {	id: 18,		
         res_name:	'Austin Rotisserie',
         res_phone:	'5125931123',			
         res_website:	'www.austinrotisserie.com',			
@@ -199,7 +215,8 @@ const restaurantData = [
         takeout_curbside:	true,					
         on_site_parking:	true,			
     },
-    {				
+    {		
+        id: 19,		
         res_name:	'Casino El Camino',
         res_phone:	'5124699330',			
         res_website:	'www.casinoelcamino.net',			
@@ -209,7 +226,8 @@ const restaurantData = [
         takeout_curbside:	true,					
         on_site_parking: true		
     },
-    {				
+    {		
+        id: 20,		
         res_name:	'Taqueria Morales',
         res_phone: 	'5129064933',			
         res_website:	'None',			
