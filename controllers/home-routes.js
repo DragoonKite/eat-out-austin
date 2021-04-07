@@ -18,8 +18,8 @@ router.get('/restaurants', (req, res) => {
     Restaurant.findAll({
       include:
         {
-          model: Review,
-          attributes: ['res_reviewed']
+          model: Review
+
         }
     })
     .then(homeData => {
