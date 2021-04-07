@@ -7,8 +7,15 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create({helpers});
 const session = require('express-session');
 
+// livereload
+const livereload = require('livereload');
+const connectLivereload = require('connect-livereload');
+const liveReloadServer = livereload.createServer();
+
+liveReloadServer.watch(path.join(__dirname, 'public'));
 
 const app = express();
+app.use(connectLivereload());
 const PORT = process.env.PORT || 3001;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
