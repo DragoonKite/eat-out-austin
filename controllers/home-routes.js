@@ -12,5 +12,17 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
+
+router.get('/restaurants', (req, res) => {
+    Restaurant.findAll()
+    .then(homeData => {
+        res.render('restaurants');
+        // res.json(homeData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
   module.exports = router;
