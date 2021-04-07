@@ -17,8 +17,9 @@ router.get('/', (req, res) => {
 router.get('/restaurants', (req, res) => {
     Restaurant.findAll()
     .then(homeData => {
-        res.render('restaurants');
-        // res.json(homeData);
+        const restaurant = homeData.map(restaurant => restaurant.get({ plain: true}));
+        res.render('restaurants', {restaurant});
+       
       })
       .catch(err => {
         console.log(err);
