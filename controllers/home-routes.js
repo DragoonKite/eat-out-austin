@@ -15,22 +15,14 @@ router.get('/', (req, res) => {
 });
 
 router.get('/restaurants', (req, res) => {
-    Restaurant.findAll({
-      include:
-        {
-          model: Review
-
-        }
-    })
+    Restaurant.findAll()
     .then(homeData => {
-        const restaurant = homeData.map(restaurant => restaurant.get({ plain: true}));
-        res.render('restaurants', {restaurant});
-       
+        res.render('restaurants');
+        // res.json(homeData);
       })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
 });
-
   module.exports = router;
