@@ -8,8 +8,8 @@ const withAuth = require('../../utils/auth');
 // get all restaurants
 router.get('/', (req, res) => {
     Restaurant.findAll()
-    .then(homeData => {
-        res.render('restaurant');
+    .then(restData => {
+        res.render('restaurants');
         // res.json(homeData);
       })
       .catch(err => {
@@ -17,6 +17,50 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+// get restaurants by food style
+router.get('/fs/:foodstyle', (req,res) => {
+  
+  Restaurant.findAll({
+    where: {
+      food_style: req.params.foodstyle
+    },
+    include:
+        {
+          model: Review,
+          attributes: ['res_reviewed']
+        }
+  }).then(restData => {
+    console.log('Testing')
+    const restaurant = restData.map(restaurant => restaurant.get({ plain: true}));
+    res.render('restaurants', {restaurant});
+   
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+//get one restaurant
+router.get('/:id', (req, res) => {
+  Review.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(ResData => {
+      if (!ResData) {
+        res.status(404).json({ message: 'No Restaurant found with this id' });
+        return;
+      }
+      res.json(ResData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // create restaurant
 router.post('/', withAuth, (req, res) => {

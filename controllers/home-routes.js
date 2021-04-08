@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
       });
 });
 
-router.get('/restaurants', (req, res) => {
+router.get('/restaurant/', (req, res) => {
     Restaurant.findAll({
       include:
         {
@@ -31,6 +31,7 @@ router.get('/restaurants', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-});
+}); 
 
-  module.exports = router;
+
+module.exports = router;
