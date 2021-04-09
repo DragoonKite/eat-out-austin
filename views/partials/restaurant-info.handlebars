@@ -1,3 +1,14 @@
+<div>
+
+<section class="page-section dinner" id="farm-to-table">
+  <div class="container">
+    <h3 class="page-section text-center text-uppercase text-secondary mb-0">{{ food_style }}</h3>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+           
            <!-- Start Aviary -->
             <div class="container-fluid">
               <div class="row">
@@ -28,16 +39,27 @@
                   <ul class="list-group list-group-flush">
                     
                     {{#if brick_mortar }}
-                    <li class="list-group-item">Brick/Trailer: Yes</li>
+                    <li class="list-group-item">Brick and Mortar: Yes</li>
                     {{ else }}
-                    <li class="list-group-item">Brick/Trailer: No</li>
+                    <li class="list-group-item">Brick and Mortar: No</li>
                     {{/if}}
 
+                    {{#if trailer }}
+                    <li class="list-group-item">Trailer: Yes</li>
+                    {{ else }}
+                    <li class="list-group-item">Trailer: No</li>
+                    {{/if}}
 
                     {{#if delivery }}
-                    <li class="list-group-item">Delivery/Takeout/Curbside: Yes</li>
+                    <li class="list-group-item">Delivery: Yes</li>
                     {{else}}
-                    <li class="list-group-item">Delivery/Takeout/Curbside: No</li>
+                    <li class="list-group-item">Delivery: No</li>
+                    {{/if}}
+
+                    {{#if takeout_curbside }}
+                    <li class="list-group-item">Takeout/Curbside: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Takeout/Curbside: No</li>
                     {{/if}}
 
                     {{#if reservations }}
@@ -52,7 +74,7 @@
                     <li class="list-group-item">Parking: No</li>
                     {{/if}}
 
-                    <li class="list-group-item">{{res_phone}}</li>
+                    <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
                   <div class="card-body">
                     <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
@@ -64,5 +86,5 @@
             </div>
             <!-- End Aviary -->
             <br>
-            <br>
 
+</div>
