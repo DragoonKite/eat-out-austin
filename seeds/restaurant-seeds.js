@@ -8,7 +8,7 @@ const restaurantData = [
         res_phone: '5124336521',
         res_website: 'www.oddduckaustin.com',			
         res_address: '1201 South Lamar Blvd.',		
-        food_style:	'American-Farm-to-Table',		
+        food_style:	'American Farm to Table',		
 		brick_mortar: true,		
         takeout_curbside: true,		
         reservations: true,		

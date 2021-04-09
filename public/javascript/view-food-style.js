@@ -1,9 +1,7 @@
 
 async function foodStyleHandler(event) {
     event.preventDefault();
-
-    let e = document.querySelector('.dropdown-menu');
-    let food_style = e.options[e.selectedIndex].value;
+    let food_style = this.value;
 
     console.log(food_style);
    const response = await fetch('/api/restaurant/fs/'+ food_style, {
@@ -45,4 +43,7 @@ async function foodStyleHandler(event) {
     console.log(data)
 }); */
 
-document.querySelector('.dropdown-menu').addEventListener('click', foodStyleHandler)
+buttons = document.querySelectorAll('.dropdown-item')
+for(button of buttons){
+    button.addEventListener('click', foodStyleHandler)
+}
