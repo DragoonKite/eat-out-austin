@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
       });
 });
 
-router.get('/restaurant/', (req, res) => {
+router.get('/restaurants/', (req, res) => {
     Restaurant.findAll({
       include:
         {

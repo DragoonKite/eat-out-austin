@@ -3,14 +3,14 @@ async function foodStyleHandler(event) {
     event.preventDefault();
     let food_style = this.value;
 
-    console.log(food_style);
-   const response = await fetch('/api/restaurant/fs/'+ food_style, {
+    const response = await fetch('/api/restaurant/fs/'+ food_style, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     }) 
-    console.log(response.data)
+
     if (response.ok){
-        document.location.replace(response.url)
+        console.log(response)
+        document.location.replace((response.url))
     } else{
         alert(response.statusText)
     } 

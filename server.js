@@ -31,7 +31,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')));
 
-
 //Express Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

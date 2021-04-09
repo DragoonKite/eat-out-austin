@@ -9,7 +9,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     Restaurant.findAll()
     .then(restData => {
-        res.render('restaurants');
+        res.render('restaurant');
         // res.json(homeData);
       })
       .catch(err => {
@@ -32,9 +32,7 @@ router.get('/fs/:foodstyle', (req,res) => {
   }).then(restData => {
     console.log('Testing')
     const restaurant = restData.map(restaurant => restaurant.get({ plain: true}));
-    res.render('restaurants', {restaurant});
-    console.log(restaurant[0].reviews[0].review_content)
-   
+    res.render('restaurant', {restaurant}); 
   })
   .catch(err => {
     console.log(err);
