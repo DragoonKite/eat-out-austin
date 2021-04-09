@@ -7,7 +7,15 @@ const withAuth = require('../../utils/auth');
 
 // get all restaurants
 router.get('/', (req, res) => {
-    Restaurant.findAll()
+    Restaurant.findAll({
+      // attributes: [
+      //   'res_name',
+      //   'res_phone',
+      //   'res_website',
+      //   'res_address',
+      //   'food_style',
+      // ]
+    })
     .then(homeData => {
         res.render('restaurant');
         // res.json(homeData);
