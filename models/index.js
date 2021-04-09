@@ -1,6 +1,7 @@
 const User = require('./User');
 const Restaurant = require('./Restaurant');
 const Review = require('./Review')
+const Vote = require('./Vote')
 
 User.hasMany(Review, {
      foreignKey: 'user_id'
@@ -22,4 +23,14 @@ Review.belongsTo(Restaurant, {
     }
 );
 
-module.exports = {User, Restaurant, Review};
+Restaurant.hasMany(Vote, {
+        foreignKey: 'restaurant_id'
+    }
+);
+
+Vote.hasMany(Restaurant, {
+        foreignKey: 'restaurant_id'
+    }
+);
+
+module.exports = {User, Restaurant, Review, Vote};
