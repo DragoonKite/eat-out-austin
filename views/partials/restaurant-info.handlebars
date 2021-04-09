@@ -21,7 +21,9 @@
                 <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
                   <div class="card-body">
                     <h5 class="card-title">{{res_name}}</h5>
-                    <p class="card-text">{{ review_content }}</p>
+                    {{#each reviews}}
+                    <p class="card-text">{{ this.review_content }}</p>
+                    {{/each}}
                   </div>
                   <ul class="list-group list-group-flush">
                     

@@ -19,11 +19,14 @@ router.get('/restaurants', (req, res) => {
       include:
         {
           model: Review,
-          attributes: ['res_reviewed']
+          attributes: ['review_content']
         }
     })
     .then(homeData => {
         const restaurant = homeData.map(restaurant => restaurant.get({ plain: true}));
+
+        // console.log(homeData.restaurant)
+        
         res.render('restaurants', {restaurant});
        
       })
