@@ -1,6 +1,6 @@
 <div>
 
-<section class="page-section dinner" id="farm-to-table">
+<section class="page-section dinner" id="farm-to-table" >
   <div class="container">
     <h3 class="page-section text-center text-uppercase text-secondary mb-0">{{ food_style }}</h3>
     <div class="divider-custom">
@@ -30,9 +30,11 @@
                 <!-- End Carousel -->
                 <!-- Start Card -->
                 <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">{{res_name}}</h5>
-                    <p class="card-text">{{ review_content }}</p>
+                  <div  class="card-body">
+                    <h3 class="card-title">{{res_name}}</h3>
+                    <p class="card-text">{{ res_address }}</p>
+                    <p class="card-text">{{#each reviews}}"{{this.review_content}}"
+                    {{/each}}</p>
                   </div>
                   <ul class="list-group list-group-flush">
                     
