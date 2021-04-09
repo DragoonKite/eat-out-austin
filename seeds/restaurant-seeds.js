@@ -78,7 +78,7 @@ const restaurantData = [
         res_phone:	'5129164445',		
         res_website:	'www.aviarywinekitchen.com',			
         res_address:	'2110 S Lamar Blvd',			
-        food_style:	'Farm to Table',			
+        food_style:	'American Farm to Table',			
         res_phone:	'5129164445',		
         res_website:	'www.aviarywinekitchen.com',			
         brick_mortar:	true,					

@@ -3144,6 +3144,7 @@ input[type=button].btn-block {
   background-clip: border-box;
   border: 0.125rem solid rgba(0, 0, 0, 0.125);
   border-radius: 0.5rem;
+  height: 65vh;
 }
 .card > hr {
   margin-right: 0;
@@ -4628,6 +4629,8 @@ a.close.disabled {
 .carousel {
   position: relative;
   margin: 20px 0;
+  width: 40vw;
+  height: 100vh;
 }
 
 .carousel.pointer-event {
