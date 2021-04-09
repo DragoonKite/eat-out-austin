@@ -28,7 +28,7 @@ Restaurant.hasMany(Vote, {
     }
 );
 
-Vote.hasMany(Restaurant, {
+Vote.belongsTo(Restaurant, {
         foreignKey: 'restaurant_id'
     }
 );
