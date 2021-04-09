@@ -16,15 +16,17 @@ router.get('/', (req, res) => {
 
 router.get('/restaurants', (req, res) => {
     Restaurant.findAll({
-      include: [
-          {
-            model: Review,
-            attributes: ['review_content']
-          }
-        ]
+      include:
+        {
+          model: Review,
+          attributes: ['review_content']
+        }
     })
     .then(homeData => {
         const restaurant = homeData.map(restaurant => restaurant.get({ plain: true}));
+
+        // console.log(homeData.restaurant)
+        
         res.render('restaurants', {restaurant});
        
       })
