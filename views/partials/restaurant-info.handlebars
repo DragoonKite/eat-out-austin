@@ -2,7 +2,7 @@
 
 <section class="page-section dinner" id="farm-to-table">
   <div class="container">
-    <h3 class="page-section text-center text-uppercase text-secondary mb-0">Farm To Table</h3>
+    <h3 class="page-section text-center text-uppercase text-secondary mb-0">{{ food_style }}</h3>
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
@@ -72,7 +72,7 @@
                     <li class="list-group-item">Parking: No</li>
                     {{/if}}
 
-                    <li class="list-group-item">{{res_phone}}</li>
+                    <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
                   <div class="card-body">
                     <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
