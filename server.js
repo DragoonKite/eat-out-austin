@@ -30,6 +30,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('views/images'))
 
 //Express Handlebars
 app.engine('handlebars', hbs.engine);
