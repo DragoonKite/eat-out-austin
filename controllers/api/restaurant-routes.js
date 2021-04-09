@@ -33,8 +33,8 @@ router.get('/fs/:foodstyle', (req,res) => {
   }).then(restData => {
     console.log('Testing')
     const restaurant = restData.map(restaurant => restaurant.get({ plain: true}));
-    //res.render('restaurants', {restaurant});
-    res.json(restaurant)
+    res.render('restaurants', {restaurant});
+    //res.json(restaurant)
    
   })
   .catch(err => {

@@ -1,4 +1,24 @@
+
 async function foodStyleHandler(event) {
+    event.preventDefault();
+
+    let e = document.querySelector('.dropdown-menu');
+    let food_style = e.options[e.selectedIndex].value;
+
+    console.log(food_style);
+   const response = await fetch('/api/restaurant/fs/'+ food_style, {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }) 
+    console.log(response.data)
+    if (response.ok){
+        document.location.replace(response.url)
+    } else{
+        alert(response.statusText)
+    } 
+}
+
+/* async function foodStyleHandler(event) {
     event.preventDefault();
 
     let e = document.querySelector('.dropdown-menu');
@@ -21,7 +41,6 @@ async function foodStyleHandler(event) {
     } */
 
     //document.location.replace('/restaurants/'+food_style)
-}
 /* foodStyleHandler().then(data => {
     console.log(data)
 }); */
