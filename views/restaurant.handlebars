@@ -54,9 +54,8 @@
     <div class="container">
       <h3 class="page-section text-center text-uppercase text-secondary mb-0">
         {{#restaurant}}
-        {{#if this.food_style}}
+        {{#if @first}}
         {{this.food_style}}
-        {{ else }}
         {{/if}}
         {{/restaurant}}</h3>
         
