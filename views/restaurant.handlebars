@@ -1,585 +1,87 @@
-<header class="masthead bg-primary text-white text-center">
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/">Eat Out, Austin</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+        type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <div class="dropdown">
+            <button class="btn2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Choose Another Style
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button class="dropdown-item"  href="/restaurant#farm-to-table" target="_blank" value="Farm to Table">Farm To Table </button>
+                <button class="dropdown-item" href="/restaurant#southern" target="_blank" value="Southern American">Southern</button>
+                <button class="dropdown-item" href="/restaurant#veggie" target="_blank" value="Vegetarian & Vegan">Vegan and Vegetarian</button>
+                <button class="dropdown-item" href="/restaurant#asian" target="_blank" value="Asian">Asian & Asian Fusion</button>
+                <button class="dropdown-item" href="/restaurant#bbq" target="_blank" value="TX BBQ">BBQ</button>
+                <button class="dropdown-item" href="/restaurant#seafood" target="_blank" value="Seafood">Seafood</button>
+                <button class="dropdown-item" href="/restaurant#latin-american" target="_blank" value="Mexican">Mexican</button>
+                <button class="dropdown-item" href="/restaurant#french" target="_blank" value="French">French</button>
+                <button class="dropdown-item" href="/restaurant#italian" target="_blank" value="Italian">Italian</button>
+                <button class="dropdown-item" href="/restaurant#indian" target="_blank" value="Indian">Indian</button>
+                <button class="dropdown-item" href="/restaurant#japanese" target="_blank" value="Sushi">Sushi</button>
+                <button class="dropdown-item" href="/restaurant#burgers" target="_blank" value="Burgers">Burgers</button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-        <!-- Large Heading-->
-        <h1 class="page-section text-uppercase mb-0">The insider scoop on some of the best places to eat in the ATX</h1>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
+      <!-- Large Heading-->
+      <h1 class="page-section text-uppercase mb-0">The insider scoop on some of the best places to eat in the ATX</h1>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
     </div>
-</header>
-<!-- Start Farm to Table-->
-<section class="page-section dinner" id="farm-to-table">
+  </header>
+
+  <section class="page-section dinner" id="farm-to-table">
     <div class="container">
-        <h3 class="page-section text-center text-uppercase text-secondary mb-0">Farm To Table</h3>
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <!-- Start Aviary Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Aviary</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/aviary/aviary-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Aviary Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/aviary/aviary-interior.jpg" class="d-block w-100" alt="Aviary Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/aviary/aviary-food.jpg" class="d-block w-100" alt="Aviary Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Aviary Carousel -->
-        <!-- Start Aviary Card -->
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Restaurant Name</h5>
-                <p class="card-text">Review</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">brick/trailer</li>
-                <li class="list-group-item">delivery/curbside/takeout</li>
-                <li class="list-group-item">Reservations</li>
-                <li class="list-group-item">Parking</li>
-                <li class="list-group-item">Phone Number</li>
+      <h3 class="page-section text-center text-uppercase text-secondary mb-0" style= "font-size: 50px">
+        {{#restaurant}}
+        {{#if @first}}
+        {{this.food_style}}
+        {{/if}}
+        {{/restaurant}}</h3>
+        
+      <div class="divider-custom">
+        <div class="divider-custom-line" style= ></div>
+        <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      {{#each restaurant as |restaurant|}}
+      {{> restaurant-info restaurant}}
+      {{/each}}
 
 
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Restaurant Website</a>
-                <a href="#" class="card-link">Directions</a>
-            </div>
-        </div>
-
-        <!-- End Aviary Card -->
-        <br>
-
-        <!-- Start Barley Swine Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Barley Swine</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/barley-swine/barley-swine-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Barley Swine Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/barley-swine/barley-swine-interior.jpg" class="d-block w-100"
-                        alt="Barley Swine Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/barley-swine/barley-swine-food.jpg" class="d-block w-100"
-                        alt="Barley Swine Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Barley Swine Carousel -->
-        <br>
-        <!-- Start Lenoir Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Lenoir</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/lenoir/lenoir-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Lenoir Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/lenoir/lenoir-interior.jpg" class="d-block w-100" alt="Lenoir Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/lenoir/lenoir-food.jpg" class="d-block w-100" alt="Lenoir Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Lenoir Carousel -->
-        <br>
-        <!-- Start Sour Duck Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Sour Duck</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/sour-duck/sour-duck-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Sour Duck Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/sour-duck/sour-duck-interior.jpg" class="d-block w-100"
-                        alt="Sour Duck Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/sour-duck/sour-duck-food.jpg" class="d-block w-100" alt="Sour Duck Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Sour Duck Carousel -->
-        <br>
-        <!-- Start Odd Duck Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Odd Duck</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/odd-duck/odd-duck-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Odd Duck Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/odd-duck/odd-duck-interior.jpg" class="d-block w-100"
-                        alt="Odd Duck Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/odd-duck/odd-duck-food.jpg" class="d-block w-100" alt="Odd Duck Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Odd Duck Carousel -->
-</section>
-<!-- End Farm to Table -->
-
-<!-- Start Southern-->
-<section class="page-section bg-primary text-white mb-0" id="southern">
+  <!-- Footer-->
+  <footer class="footer text-center">
     <div class="container">
-        <h3 class="page-section text-center text-uppercase text-white">Southern</h3>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
+      <div class="row">
+        <div class="text-center">
+          <a class="nav-link text-white" href="#page-top">BACK TO TOP OF PAGE</a>
 
-        <!-- Start Olamaie Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Olamaie</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/olamaie/olamaie-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Olamaie Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/olamaie/olamaie-interior.jpg" class="d-block w-100"
-                        alt="Olamaie Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/olamaie/olamaie-food.jpg" class="d-block w-100" alt="Olamaie Food">
-                </div>
-            </div>
         </div>
-        <!-- End Olamaie Carousel -->
+      </div>
     </div>
-</section>
-<!-- End Southern -->
-
-
-<!-- Start Veg & Vegan-->
-<section class="page-section" id="veggie">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-secondary mb-0">Vegetarian and Vegan</h3>
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Bouldin Creek Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Bouldin Creek</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/bouldin-creek/bouldin-creek-front.jpg" class="d-block w-100"
-                        id="imageSize" alt="Bouldin Creek Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/bouldin-creek/bouldin-creek-interior.jpg" class="d-block w-100"
-                        alt="Bouldin Creek Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/bouldin-creek/bouldin-creek-food.jpg" class="d-block w-100"
-                        alt="Bouldin Creek Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Bouldin Creek Carousel -->
-    </div>
-</section>
-<!-- End Veg & Vegan -->
-
-<!-- Start Asian -->
-<section class="page-section bg-primary text-white mb-0" id="asian">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-white">Asian & Asian Fusion</h3>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Lin Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Lin</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/lin/lin-front.jpg" class="d-block w-100" id="imageSize" alt="Lin Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/lin/lin-interior.jpg" class="d-block w-100" alt="Lin Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/lin/lin-food.jpg" class="d-block w-100" alt="Lin Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Lin Carousel -->
-        <br>
-        <!-- Start Loro Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Loro</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/loro/loro-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Loro Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/loro/loro-interior.jpg" class="d-block w-100" alt="Loro Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/loro/loro-food.jpg" class="d-block w-100" alt="Loro Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Loro Carousel -->
-    </div>
-    </div>
-</section>
-<!-- End Asian -->
-
-<!-- Start BBQ -->
-<section class="page-section" id="bbq">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-secondary mb-0">Barbeque</h3>
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Franklin BBQ Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Franklin BBQ</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/franklin-bbq/franklin-bbq-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Franklin BBQ Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/franklin-bbq/franklin-bbq-interior.jpg" class="d-block w-100"
-                        alt="Franklin BBQ Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/franklin-bbq/franklin-bbq-food.jpg" class="d-block w-100"
-                        alt="Franklin BBQ Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Franklin BBQ Carousel -->
-        <br>
-        <!-- Start Lamberts Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Lamberts</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/lamberts/lamberts-front.png" class="d-block w-100" id="imageSize"
-                        alt="Lamberts Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/lamberts/lamberts-interior.jpg" class="d-block w-100"
-                        alt="Lamberts Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/lamberts/lamberts-food.jpg" class="d-block w-100" alt="Lamberts Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Lamberts Carousel -->
-    </div>
-</section>
-<!-- End BBQ -->
-
-<!-- Start Seafood-->
-<section class="page-section bg-primary text-white mb-0" id="seafood">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-white">Seafood</h3>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Perla's Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Perla's</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/perlas/perlas-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Perla's Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/perlas/perlas-interior.jpg" class="d-block w-100" alt="Perla's Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/perlas/perlas-food.jpg" class="d-block w-100" alt="Franklin BBQ Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Perla's Carousel -->
-    </div>
-</section>
-<!-- End Seafood -->
-
-<!-- Start Latin -->
-<section class="page-section" id="latin-american">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-secondary mb-0">Latin American</h3>
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <!-- Start Suerte Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Suerte</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/suerte/suerte-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Suerta Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/suerte/suerte-interior.jpeg" class="d-block w-100" alt="Suerte Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/suerte/suerte-food.jpg" class="d-block w-100" alt="Suerte Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Suerte Carousel -->
-        <br>
-        <!-- Start Taqueria Morales Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Taqueria Morales</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/taqueria-morales/taqueria-morales-front.jpg" class="d-block w-100"
-                        id="imageSize" alt="Taqueria Morales Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/taqueria-morales/taqueria-morales-food.jpg" class="d-block w-100"
-                        alt="Lin Tacos">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/taqueria-morales/taqueria-morales-tacos.jpg" class="d-block w-100"
-                        alt="Lin Tacos">
-                </div>
-            </div>
-        </div>
-        <!-- End Taqueria Morales Carousel -->
-    </div>
-</section>
-<!-- End Latin -->
-
-<!--Start French -->
-<section class="page-section bg-primary text-white mb-0" id="french">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-white">French</h3>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Justine's Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Justine's</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/justines/justines-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Justine's Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/justines/justines-interior.jpg" class="d-block w-100"
-                        alt="Justine's Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/justines/justines-food.jpg" class="d-block w-100" alt="Justine's Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Justine's Carousel -->
-        <br>
-        <!-- Start Austin Rotisserie Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Austin Rotisserie</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/austin-rotisserie/austin-rotisserie-baguette.jpg" class="d-block w-100"
-                        id="imageSize" alt="Austin Rotisserie Baguette Sandwich">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/austin-rotisserie/austin-rotisserie-chicken.jpg" class="d-block w-100"
-                        alt="Austin Rotisserie Chicken">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/austin-rotisserie/austin-rotisserie-potatoes.jpg" class="d-block w-100"
-                        alt="Austin Rotisserie Potatoes">
-                </div>
-            </div>
-        </div>
-        <!-- End Austin Rotisserie Carousel -->
-    </div>
-</section>
-<!-- End French -->
-
-<!-- Start Italian -->
-<section class="page-section" id="italian">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-secondary mb-0">Italian</h3>
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Intero Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Intero</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/intero/intero-front.png" class="d-block w-100" id="imageSize"
-                        alt="Intero Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/intero/intero-interior.jpg" class="d-block w-100" alt="Intero Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/intero/intero-food.jpg" class="d-block w-100" alt="Intero Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Lin Carousel -->
-    </div>
-</section>
-<!-- End Italian -->
-
-<!-- Start Indian-->
-<section class="page-section bg-primary text-white mb-0" id="indian">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-white">Indian</h3>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Clay Pit Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Clay Pit</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/clay-pit/clay-pit-front.jpg" class="d-block w-100" id="imageSize"
-                        alt="Clay Pit Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/clay-pit/clay-pit-interior.png" class="d-block w-100"
-                        alt="Clay Pit Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/clay-pit/clay-pit-food.jpg" class="d-block w-100" alt="Clay Pit Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Clay Pit Carousel -->
-    </div>
-</section>
-<!-- End Indian -->
-
-<!-- Start Japanese-->
-<section class="page-section" id="japanese">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-secondary mb-0">Japanese-Sushi</h3>
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Mushashino Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Mushashino</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/mushashino/mushashino-front.png" class="d-block w-100" id="imageSize"
-                        alt="Mushashino Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/mushashino/mushashino-interior.jpg" class="d-block w-100"
-                        alt="Mushashino Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/mushashino/mushashino-food.jpg" class="d-block w-100"
-                        alt="Mushashino Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Mushashino Carousel -->
-    </div>
-</section>
-<!-- End Japanese-->
-
-<!-- Start Burgers -->
-<section class="page-section bg-primary text-white mb-0" id="burgers">
-    <div class="container">
-        <h3 class="page-section text-center text-uppercase text-white">Burgers</h3>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Start Casino Carousel -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <h2>Casino El Camino</h2>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/casino-el-camino/casino-el-camino-front.jpg" class="d-block w-100"
-                        id="imageSize" alt="Casino El Camino Front">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/casino-el-camino/casino-el-camino-interior.jpg" class="d-block w-100"
-                        alt="Casino El Camino Interior">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/casino-el-camino/casino-el-camino-food.jpg" class="d-block w-100"
-                        alt="Casino El Camino Food">
-                </div>
-            </div>
-        </div>
-        <!-- End Casino El Camino Carousel -->
-
-    </div>
-</section>
-
-<!-- Footer-->
-<footer class="footer text-center">
-    <div class="container">
-        <div class="row">
-            <div class="text-center">
-                <a class="nav-link text-white" href="#page-top">BACK TO TOP OF PAGE</a>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Created by Section-->
-<div class="created-by py-4 text-center text-white">
+  </footer>
+  <!-- Created by Section-->
+  <div class="created-by py-4 text-center text-white">
     <div class="container"><small>Created by: Best-Team</small></div>
-</div>
+  </div>
