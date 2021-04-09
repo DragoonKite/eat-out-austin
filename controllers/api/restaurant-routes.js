@@ -27,14 +27,13 @@ router.get('/fs/:foodstyle', (req,res) => {
     },
     include:
         {
-          model: Review,
-          attributes: ['res_reviewed']
+          model: Review
         }
   }).then(restData => {
     console.log('Testing')
     const restaurant = restData.map(restaurant => restaurant.get({ plain: true}));
     res.render('restaurants', {restaurant});
-    //res.json(restaurant)
+    console.log(restaurant[0].reviews[0].review_content)
    
   })
   .catch(err => {
