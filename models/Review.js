@@ -36,7 +36,7 @@ Review.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        //Aproval by admin
+        //Approval by admin
         review_approval:
         {
             type: DataTypes.BOOLEAN,

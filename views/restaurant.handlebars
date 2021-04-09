@@ -17,20 +17,18 @@
               Choose Another Style
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#farm-to-table">Farm To Table</a>
-              <a class="dropdown-item" href="#southern">Southern</a>
-              <a class="dropdown-item" href="#veggie">Vegan and Vegetarian</a>
-              <a class="dropdown-item" href="#asian">Asian & Asian Fusion</a>
-              <a class="dropdown-item" href="#bbq">BBQ</a>
-              <a class="dropdown-item" href="#seafood">Seafood</a>
-              <a class="dropdown-item" href="#latin-american">Latin American</a>
-              <a class="dropdown-item" href="#french">French</a>
-              <a class="dropdown-item" href="#italian">Italian</a>
-              <a class="dropdown-item" href="#indian">Indian</a>
-              <a class="dropdown-item" href="#japanese">Japanese-Sushi</a>
-              <a class="dropdown-item" href="#burgers">Burgers</a>
-
-
+              <button class="dropdown-item"  href="/restaurant#farm-to-table" target="_blank" value="Farm to Table">Farm To Table </button>
+                <button class="dropdown-item" href="/restaurant#southern" target="_blank" value="Southern American">Southern</button>
+                <button class="dropdown-item" href="/restaurant#veggie" target="_blank" value="Vegetarian & Vegan">Vegan and Vegetarian</button>
+                <button class="dropdown-item" href="/restaurant#asian" target="_blank" value="Asian">Asian & Asian Fusion</button>
+                <button class="dropdown-item" href="/restaurant#bbq" target="_blank" value="TX BBQ">BBQ</button>
+                <button class="dropdown-item" href="/restaurant#seafood" target="_blank" value="Seafood">Seafood</button>
+                <button class="dropdown-item" href="/restaurant#latin-american" target="_blank" value="Mexican">Mexican</button>
+                <button class="dropdown-item" href="/restaurant#french" target="_blank" value="French">French</button>
+                <button class="dropdown-item" href="/restaurant#italian" target="_blank" value="Italian">Italian</button>
+                <button class="dropdown-item" href="/restaurant#indian" target="_blank" value="Indian">Indian</button>
+                <button class="dropdown-item" href="/restaurant#japanese" target="_blank" value="Sushi">Sushi</button>
+                <button class="dropdown-item" href="/restaurant#burgers" target="_blank" value="Burgers">Burgers</button>
             </div>
           </div>
         </ul>
@@ -52,18 +50,23 @@
     </div>
   </header>
 
-  <!-- Start Farm to Table-->
-  {{!-- <section class="page-section dinner" id="farm-to-table">
+  <section class="page-section dinner" id="farm-to-table">
     <div class="container">
-      <h3 class="page-section text-center text-uppercase text-secondary mb-0">Farm To Table</h3>
+      <h3 class="page-section text-center text-uppercase text-secondary mb-0" style= "font-size: 50px">
+        {{#restaurant}}
+        {{#if @first}}
+        {{this.food_style}}
+        {{/if}}
+        {{/restaurant}}</h3>
+        
       <div class="divider-custom">
-        <div class="divider-custom-line"></div>
+        <div class="divider-custom-line" style= ></div>
         <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
         <div class="divider-custom-line"></div>
-      </div> --}}
+      </div>
 
       {{#each restaurant as |restaurant|}}
-      {{> restaurant-info }}
+      {{> restaurant-info restaurant}}
       {{/each}}
 
 

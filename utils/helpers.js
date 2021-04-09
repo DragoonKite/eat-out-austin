@@ -1,6 +1,6 @@
 module.exports = {
     format_name: name => {
-        return name.replace(/\s/g, '-')
+        return name.replace(/\s/g, '-').toLowerCase();
     },
 
     format_phone: phone => {
