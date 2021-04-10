@@ -59,4 +59,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// router.post('./api/users', (req, res) => {
+
+// })
+
 module.exports = router;

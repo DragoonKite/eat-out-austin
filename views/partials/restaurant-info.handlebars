@@ -38,7 +38,6 @@
                       {{!-- {{/each}} --}}
                       {{!-- </h1> --}}
 
-                    <p class="card-title">{{res_address}}</p>
                     {{#each reviews}}
                     <p class="card-text">"{{ this.review_content }}"
                       </p>
@@ -46,6 +45,10 @@
                   </div>
                   <ul class="list-group list-group-flush">
                     
+                    <li class="list-group-item">Address:{{ res_address}}</li>
+                    
+                    
+
                     {{#if brick_mortar }}
                     <li class="list-group-item">Brick and Mortar: Yes</li>
                     {{ else }}
