@@ -1,1 +1,35 @@
-<div>dashboard</div>
+<br>
+<section>
+    <section>
+  <h2>Add New Restaurant</h2>
+
+  <form class="new-post-form">
+      <div class="mb-3">
+        <label for="post-title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="post-title" name="post-title">
+      </div>
+      <div class="mb-3">
+        <label for="post-content" class="form-label">Content:</label>
+        <textarea class="form-control" id="post-content" name="post-content" cols="30" rows="10"></textarea>
+      </div>    
+
+    <button type="submit" class="btn btn-outline-dark">Create</button>
+  </form>
+</section>
+    <h2>Approved Restaurants</h2>
+
+    {{#if restaurants.length}}
+    <div>
+        {{#each restaurant as |restaurant|}}
+        <div>
+            {{> restaurant-info restaurant}}
+                <a href="/dashboard/edit/{{restaurant.id}}" class="card-link">Edit restaurant.</a>
+            </div>
+                
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</section>
+
+<script src="/javascript/add-post.js"></script>

@@ -21,7 +21,7 @@ async function signupFormHandler(event) {
         headers: { 'Content-Type': 'application/json' }
       }).then(response => {
         console.log(document.location)
-          // document.location.replace('/homepage');
+          document.location.replace('/homepage');
       }).catch(err => {console.log(err)})
   
     //   if (response.ok) {
