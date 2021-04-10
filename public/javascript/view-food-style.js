@@ -1,19 +1,18 @@
-
 async function foodStyleHandler(event) {
-    event.preventDefault();
-    let food_style = this.value;
+  event.preventDefault();
+  const food_style = this.value;
 
-    const response = await fetch('/api/restaurant/fs/'+ food_style, {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    }) 
+  const response = await fetch(`/api/restaurant/fs/${food_style}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
 
-    if (response.ok){
-        console.log(response)
-        document.location.replace((response.url))
-    } else{
-        alert(response.statusText)
-    } 
+  if (response.ok) {
+    console.log(response);
+    document.location.replace(response.url);
+  } else {
+    alert(response.statusText);
+  }
 }
 
 /* async function foodStyleHandler(event) {
@@ -38,12 +37,12 @@ async function foodStyleHandler(event) {
         alert(response.statusText)
     } */
 
-    //document.location.replace('/restaurants/'+food_style)
+// document.location.replace('/restaurants/'+food_style)
 /* foodStyleHandler().then(data => {
     console.log(data)
 }); */
 
-buttons = document.querySelectorAll('.dropdown-item')
-for(button of buttons){
-    button.addEventListener('click', foodStyleHandler)
+buttons = document.querySelectorAll('.dropdown-item');
+for (button of buttons) {
+  button.addEventListener('click', foodStyleHandler);
 }
