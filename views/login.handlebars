@@ -6,6 +6,14 @@
       <input type="text" id="username-signup" class="form-control w-25" />
     </div>
     <div class="mb-3">
+      <label for="username-signup" class="form-label">First Name:</label>
+      <input type="text" id="firstName-signup" class="form-control w-25" />
+    </div>
+    <div class="mb-3">
+      <label for="username-signup" class="form-label">Last Name:</label>
+      <input type="text" id="lastName-signup" class="form-control w-25" />
+    </div>
+    <div class="mb-3">
       <label for="email-signup" class="form-label">Email:</label>
       <input type="text" id="email-signup" class="form-control w-25" />
     </div>
@@ -14,7 +22,7 @@
       <input type="password" id="password-signup" class="form-control w-25" />
     </div>
     <div>
-      <button type="submit" class="btn btn-outline-dark">Signup</button>
+      <button type="submit" class="btn btn-outline-dark submitsignup" id="signUp" onclick="signupFormHandler()">Signup</button>
     </div>
   </form>
   <br>
@@ -34,7 +42,7 @@
     </div>
 
     <div>
-      <button type="submit" class="btn btn-outline-dark ">Login</button>
+      <button type="submit" class="btn btn-outline-dark submitlogin">Login</button>
     </div>
     
   </form>
