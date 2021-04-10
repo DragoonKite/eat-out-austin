@@ -1,12 +1,11 @@
 const User = require('./User');
 const Restaurant = require('./Restaurant');
-const Review = require('./Review')
-const Vote = require('./Vote')
+const Review = require('./Review');
+const Vote = require('./Vote');
 
 User.hasMany(Review, {
-     foreignKey: 'user_id'
-    }
-);
+  foreignKey: 'user_id',
+});
 
 Review.belongsTo(User, {
     foreignKey: 'user_id'
@@ -14,15 +13,16 @@ Review.belongsTo(User, {
 );
 
 Restaurant.hasMany(Review, {
-        foreignKey: 'res_reviewed'
-    }
-);
+  foreignKey: 'res_reviewed',
+});
 
+Review.belongsTo(User, {
+  foreignKey: 'user_id',
+});
 
 Review.belongsTo(Restaurant, {
-        foreignKey: 'res_reviewed'
-    }
-);
+  foreignKey: 'res_reviewed',
+});
 
 User.belongsToMany(Restaurant, {
     through: Vote,
@@ -47,8 +47,8 @@ Vote.belongsTo(User, {
 );
 
 Restaurant.hasMany(Vote, {
-        foreignKey: 'restaurant_id'
-    }
+  foreignKey: 'restaurant_id',
+}
 );
 
 User.hasMany(Vote, {
