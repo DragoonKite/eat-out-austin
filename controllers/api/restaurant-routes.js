@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Restaurant, User, Review } = require("../../models");
+const { Restaurant, User, Review, Vote } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 
@@ -8,17 +8,31 @@ const withAuth = require('../../utils/auth');
 // get all restaurants
 router.get('/', (req, res) => {
     Restaurant.findAll({
-      // attributes: [
-      //   'res_name',
-      //   'res_phone',
-      //   'res_website',
-      //   'res_address',
-      //   'food_style',
-      // ]
+      attributes: [
+        'id',
+        'res_name',
+        'res_phone',
+        'res_website',
+        'res_address',
+        'food_style',
+        'brick_mortar',
+        'trailer',
+        'delivery',
+        'takeout_curbside',
+        'reservations',
+        'on_site_parking',
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
+
+      ],
+      include:
+      {
+        model: Review,
+        attributes: ['review_content']
+      }
     })
     .then(homeData => {
         res.render('restaurant');
-        // res.json(homeData);
+        res.json(homeData);
       })
       .catch(err => {
         console.log(err);
@@ -53,6 +67,27 @@ router.get('/:id', (req, res) => {
   Review.findOne({
     where: {
       id: req.params.id
+    },
+    attributes: [
+      'id',
+      'res_name',
+      'res_phone',
+      'res_website',
+      'res_address',
+      'food_style',
+      'brick_mortar',
+      'trailer',
+      'delivery',
+      'takeout_curbside',
+      'reservations',
+      'on_site_parking',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
+
+    ],
+    include:
+    {
+      model: Review,
+      attributes: ['review_content']
     }
   })
     .then(ResData => {
@@ -89,6 +124,44 @@ router.post('/', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
+});
+
+router.put('/upvote', (req, res) => {
+    Vote.create({
+      user_id: req.body.user_id,
+      restaurant_id: req.body.restaurant_id
+    }).then(() => {
+      // find restaurant we just voted on
+      return Restaurant.findOne({
+        where: {
+          id: req.body.restaurant_id
+        },
+        attributes: [
+          'id',
+          'res_name',
+          'res_phone',
+          'res_website',
+          'res_address',
+          'food_style',
+          'brick_mortar',
+          'trailer',
+          'delivery',
+          'takeout_curbside',
+          'reservations',
+          'on_site_parking',
+          // use raw MySQL aggregate function query to get a count of how many votes the post has and return it under the name `vote_count`
+          [
+            sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'),
+            'vote_count'
+          ]
+        ]
+      })
+    .then(voteData => res.json(voteData))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+  });
 });
 
 // update restaurant (REVIEW)
