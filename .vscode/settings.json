@@ -21,11 +21,13 @@
         "claypit",
         "csvg",
         "displayname",
+        "dropbtn",
         "dropleft",
         "dropright",
         "dropup",
         "exphbs",
         "firstname",
+        "foodstyle",
         "franklinbbq",
         "hnnnngh",
         "interorestaurant",
@@ -44,6 +46,7 @@
         "scrollable",
         "sourduckmarket",
         "suerteatx",
-        "thicc"
+        "thicc",
+        "upvote"
     ]
 }

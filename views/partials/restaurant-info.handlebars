@@ -1,91 +1,101 @@
 <div>
-
-<section class="page-section dinner" id="farm-to-table">
-  <div class="container">
-    <h3 class="page-section text-center text-uppercase text-secondary mb-0">{{ food_style }}</h3>
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
            
-      <!-- Start Aviary -->
-      <div class="container-fluid">
-        <div class="row">
-          <!-- Start Carousel -->
-          <div class="carousel slide col-md-5" data-ride="carousel">
-            <h2>{{res_name}}</h2>
-            <div class="carousel-inner leftSide">
-              <div class="carousel-item active">
-                {{!--  <img src="./assets/images/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front"> --}}
-                <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
-              </div>
-              <div class="carousel-item">
-                <img src="/{{format_name res_name}}/{{format_name res_name}}-interior.jpg" class="d-block w-100" alt="{{format_name res_name}} Interior">
-              </div>
-              <div class="carousel-item">
-                <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
+           <!-- Start Aviary -->
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Start Carousel -->
+                <div class="carousel slide col-md-5" data-ride="carousel">
+                  <h2>{{res_name}}</h2>
+                  <div class="carousel-inner leftSide">
+                    <div class="carousel-item active">
+                      <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/{{format_name res_name}}/{{format_name res_name}}-interior.jpg" class="d-block w-100" alt="{{format_name res_name}} Interior">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
+                    </div>
+                  </div>
+                </div>
+                <!-- End Carousel -->
+                <!-- Start Card -->
+                <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{res_name}}</h5>
+
+                    
+                    {{!-- <h1>{{#each reviews}}
+                      {{#each users}}
+                    {{ this.displayName }}
+                    {{/each}}
+                    {{/each}}
+                    </h1> --}}
+
+
+{{!-- Working on putting displayName at end of review --}}
+                      {{!-- {{#each reviews}} --}}
+                      {{!-- {{#each user}} --}}
+                      {{!-- {{ displayName}} --}}
+                      {{!-- {{/each}} --}}
+                      {{!-- {{/each}} --}}
+
+                      </h1>
+                    <p class="card-title">{{res_address}}</p>
+                    {{#each reviews}}
+                    <p class="card-text">"{{ this.review_content }}"
+                      </p>
+                    {{/each}}
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    
+                    {{#if brick_mortar }}
+                    <li class="list-group-item">Brick and Mortar: Yes</li>
+                    {{ else }}
+                    <li class="list-group-item">Brick and Mortar: No</li>
+                    {{/if}}
+
+                    {{#if trailer }}
+                    <li class="list-group-item">Trailer: Yes</li>
+                    {{ else }}
+                    <li class="list-group-item">Trailer: No</li>
+                    {{/if}}
+
+                    {{#if delivery }}
+                    <li class="list-group-item">Delivery: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Delivery: No</li>
+                    {{/if}}
+
+                    {{#if takeout_curbside }}
+                    <li class="list-group-item">Takeout/Curbside: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Takeout/Curbside: No</li>
+                    {{/if}}
+
+                    {{#if reservations }}
+                    <li class="list-group-item">Reservations: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Reservations: No</li>
+                    {{/if}}
+
+                    {{#if on_site_parking }}
+                    <li class="list-group-item">Parking: Yes</li>
+                    {{else}}
+                    <li class="list-group-item">Parking: No</li>
+                    {{/if}}
+
+                    <li class="list-group-item">{{format_phone res_phone}}</li>
+                  </ul>
+                  <div class="card-body">
+                    <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
+                    <a href="#" class="card-link">Directions</a>
+                  </div>
+                </div>
+                <!-- End Card -->
               </div>
             </div>
-          </div>
-          <!-- End Carousel -->
-          <!-- Start Card -->
-          <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
-            <div class="card-body">
-              <h5 class="card-title">{{res_name}}</h5>
-              {{#each reviews}}
-              <p class="card-text">{{ this.review_content }}</p>
-              {{/each}}
-            </div>
-            <ul class="list-group list-group-flush">
-              
-              {{#if brick_mortar }}
-              <li class="list-group-item">Brick and Mortar: Yes</li>
-              {{ else }}
-              <li class="list-group-item">Brick and Mortar: No</li>
-              {{/if}}
+            <!-- End Aviary -->
+            <br>
 
-              {{#if trailer }}
-              <li class="list-group-item">Trailer: Yes</li>
-              {{ else }}
-              <li class="list-group-item">Trailer: No</li>
-              {{/if}}
-
-              {{#if delivery }}
-              <li class="list-group-item">Delivery: Yes</li>
-              {{else}}
-              <li class="list-group-item">Delivery: No</li>
-              {{/if}}
-
-              {{#if takeout_curbside }}
-              <li class="list-group-item">Takeout/Curbside: Yes</li>
-              {{else}}
-              <li class="list-group-item">Takeout/Curbside: No</li>
-              {{/if}}
-
-              {{#if reservations }}
-              <li class="list-group-item">Reservations: Yes</li>
-              {{else}}
-              <li class="list-group-item">Reservations: No</li>
-              {{/if}}
-
-              {{#if on_site_parking }}
-              <li class="list-group-item">Parking: Yes</li>
-              {{else}}
-              <li class="list-group-item">Parking: No</li>
-              {{/if}}
-
-              <li class="list-group-item">{{format_phone res_phone}}</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
-              <a href="#" class="card-link">Directions</a>
-            </div>
-          </div>
-          <!-- End Card -->
-        </div>
-      </div>
-      <!-- End Aviary -->
-      <br>
-  </div>
-</section>
+</div>
