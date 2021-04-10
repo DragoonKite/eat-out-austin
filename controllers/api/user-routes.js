@@ -35,16 +35,17 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   // expects {username: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
   User.create({
-    displayname: req.body.displayname,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    displayName: req.body.displayName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
   })
-    .then((userData) => {
+    .then(userData => {
+      console.log(req.body.displayName);
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.username = userData.username;

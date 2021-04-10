@@ -50,5 +50,15 @@ router.get('/restaurants/', (req, res) => {
       });
 }); 
 
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('login');
+  } else {
+    console.log("wrooooong")
+  }
+});
+
+//   res.render('login');
+// });
 
 module.exports = router;
