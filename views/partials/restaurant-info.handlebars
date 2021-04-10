@@ -29,14 +29,14 @@
                 </div>
                 <!-- End Carousel -->
                 <!-- Start Card -->
-                <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
-                  <div class="card-body">
+                <div class="card border border-secondary col-md-6" style="width: 25rem;">
+                  <div class="card-body restaurantReview">
                     <h5 class="card-title">{{res_name}}</h5>
                     {{#each reviews}}
-                    <p class="card-text">{{ this.review_content }}</p>
+                    <p class="card-text ">{{ this.review_content }}</p>
                     {{/each}}
                   </div>
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group list-group-flush restaurantInfo">
                     
                     {{#if brick_mortar }}
                     <li class="list-group-item">Brick and Mortar: Yes</li>
@@ -77,8 +77,9 @@
                     <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
                   <div class="card-body">
-                    <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
+                    <a href="#" class="card-link">{{ res_website }}</a>
                     <a href="#" class="card-link">Directions</a>
+                  </div>
                   </div>
                 </div>
                 <!-- End Card -->
