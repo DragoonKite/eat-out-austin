@@ -37,6 +37,18 @@
                             href="#about">Why Use Eat Out, Austin</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="#contact">Want to Contribute?</a></li>
+                    {{#if loggedIn}}
+                    <li class="nav-item  py-3 px-0 px-lg-3 rounded js-scroll-trigger">
+                        <a class="nav-link  py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/dashboard">dashboard</a>
+                    </li>
+                    <li class="nav-item  py-3 px-0 px-lg-3 rounded js-scroll-trigger">
+                        <a class="nav-link" href="#" id="logout" class="">logout</a>
+                    </li>
+                    {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">login</a>
+                    </li>
+                    {{/if}}
                 </ul>
             </div>
         </div>
