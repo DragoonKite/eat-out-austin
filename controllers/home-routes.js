@@ -1,21 +1,37 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Restaurant, User, Review} = require('../models');
+const { Restaurant, User, Review, Vote} = require('../models');
 
 router.get('/', (req, res) => {
-    Restaurant.findAll()
-    .then(homeData => {
-        res.render('homepage');
-        // res.json(homeData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+  Restaurant.findAll()
+    .then((homeData) => {
+      res.render('homepage');
+      // res.json(homeData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
-router.get('/restaurants', (req, res) => {
+router.get('/restaurants/', (req, res) => {
     Restaurant.findAll({
+      attributes: [
+        'id',
+        'res_name',
+        'res_phone',
+        'res_website',
+        'res_address',
+        'food_style',
+        'brick_mortar',
+        'trailer',
+        'delivery',
+        'takeout_curbside',
+        'reservations',
+        'on_site_parking',
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
+
+      ],
       include:
         {
           model: Review,
@@ -24,8 +40,6 @@ router.get('/restaurants', (req, res) => {
     })
     .then(homeData => {
         const restaurant = homeData.map(restaurant => restaurant.get({ plain: true}));
-
-        // console.log(homeData.restaurant)
         
         res.render('restaurants', {restaurant});
        
@@ -34,6 +48,7 @@ router.get('/restaurants', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-});
+}); 
 
-  module.exports = router;
+
+module.exports = router;
