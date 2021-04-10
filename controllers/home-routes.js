@@ -52,15 +52,13 @@ router.get('/restaurants/', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
+    res.render('login');
+  } else {
+    console.log("wrooooong")
   }
-
-  res.render('login');
 });
 
-// router.post('./api/users', (req, res) => {
-
-// })
+//   res.render('login');
+// });
 
 module.exports = router;
