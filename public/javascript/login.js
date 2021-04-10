@@ -19,15 +19,19 @@ async function signupFormHandler(event) {
         password
         }),
         headers: { 'Content-Type': 'application/json' }
-      });
-
-       if (response.ok) {
-        document.location.replace('/dashboard/');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  }
+      }).then(response => {
+        console.log(document.location)
+          document.location.replace('/homepage');
+      }).catch(err => {console.log(err)})
+  
+    //   if (response.ok) {
+    //     console.log(document.location)
+        
+    //   } else {
+    //     alert(response.statusText);
+    //   }
+     }
+}
 
 async function loginFormHandler(event) {
     event.preventDefault();
@@ -51,9 +55,7 @@ async function loginFormHandler(event) {
         alert(response.statusText);
       }
     }
-  }
-
-
+}
   
 document.querySelector('.login-form').addEventListener('.submitlogin', loginFormHandler);
   
