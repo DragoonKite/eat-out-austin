@@ -23,7 +23,7 @@ async function signupFormHandler(event) {
       });
 
        if (response.ok) {
-        res.render('/dashboard');
+        res.render('/');
       } else {
         alert(response.statusText);
       }
@@ -54,7 +54,7 @@ async function loginFormHandler(event) {
     }
 }
 
-document.querySelector('.submitlogin').addEventListener('submit', loginFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
   
-document.querySelector('.submitsignup').addEventListener('submit', signupFormHandler);
+document.querySelector('#signUp').addEventListener('submit', signupFormHandler);
 

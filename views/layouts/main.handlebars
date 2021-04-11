@@ -40,18 +40,18 @@
                             href="#about">Why Use Eat Out, Austin</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="#contact">Want to Contribute?</a></li>
-                    {{!-- {{#if loggedIn}} --}}
+                    {{#if loggedIn}}
                     <li class="nav-item  mx-0 mx-lg-1">
                         <a class="nav-link  py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item  mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" id="logout" class="">Logout</a>
                     </li>
-                    {{!-- {{else}} --}}
+                    {{else}}
                     <li class="nav-item">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/login">Login</a>
                     </li>
-                    {{!-- {{/if}} --}}
+                    {{/if}}
                 </ul>
             </div>
         </div>
@@ -66,12 +66,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="/javascript/view-food-style.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
     {{!-- <script src="/javascript/directions.js"></script> --}}
 =======
     {{!-- {{#if loggedIn}} --}}
     <script src="/javascript/logout.js"></script>
     {{!-- {{/if}} --}}
 >>>>>>> juan/authentication
+=======
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    {{!-- <script src="/javascript/directions.js"></script> --}}
+>>>>>>> 0a5c2a80d3608ab66dbce613b3c8a17eb2f0de9a
 </body>
 
 </html>
