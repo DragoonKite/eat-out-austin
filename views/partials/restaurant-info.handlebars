@@ -23,25 +23,20 @@
                 <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
                   <div class="card-body">
 
-                    
-                    {{!-- <h1>{{#each reviews}}
-                      {{#each users}}
-                    {{ this.displayName }}
-                    {{/each}}
-                    {{/each}}
-
-                      {{!-- {{#each reviews}} --}}
-                      {{!-- {{#each user}} --}}
-                      {{!-- {{ displayName}} --}}
-                      {{!-- {{/each}} --}}
-                      {{!-- {{/each}} --}}
-                      {{!-- </h1> --}}
-
                     {{#each reviews}}
                     <p class="card-text restaurantReview" style="text-align: center;">"{{ this.review_content }}"
-                      </p>
+                    </p>
                     {{/each}}
-                  </div>
+
+{{!-- No luck yet displaying the user displayName on each review --}}
+                  {{!-- <h3>
+                    {{#user}}
+                    {{#if @first}}
+                    {{this.displayName}}
+                    {{/if}}
+                    {{/user}}</h3>
+                  </div> --}}
+
                   <ul class="list-group list-group-flush restaurantInfo">
                     
                     <li class="list-group-item">Address: {{ res_address}}</li>
