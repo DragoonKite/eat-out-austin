@@ -55,6 +55,11 @@ router.get('/login', (req, res) => {
     res.render('login');
   } else {
     res.render('dashboard');
+
+  // if (req.session.loggedIn) {
+  //   res.redirect('/dashboard');
+  //   return;
+  
   }
 });
 

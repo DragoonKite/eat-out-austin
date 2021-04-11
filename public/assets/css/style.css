@@ -3139,12 +3139,14 @@ input[type=button].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  width: 65px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 0.125rem solid rgba(0, 0, 0, 0.125);
   border-radius: 0.5rem;
-  height: 65vh;
+  min-height: 200px;
+  height: auto;
 }
 .card > hr {
   margin-right: 0;

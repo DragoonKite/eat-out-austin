@@ -7,13 +7,13 @@
                 <div class="carousel slide col-md-5" data-ride="carousel">
                   <h2>{{res_name}}</h2>
                   <div class="carousel-inner leftSide">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-interior.jpg" class="d-block w-100" alt="{{format_name res_name}} Interior">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
                     </div>
                   </div>
@@ -21,8 +21,7 @@
                 <!-- End Carousel -->
                 <!-- Start Card -->
                 <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
-                  <div class="card-body" style="overflow: scroll">
-                    <h5 class="card-title">{{res_name}}</h5>
+                  <div class="card-body">
 
                     
                     {{!-- <h1>{{#each reviews}}
@@ -39,13 +38,13 @@
                       {{!-- </h1> --}}
 
                     {{#each reviews}}
-                    <p class="card-text">"{{ this.review_content }}"
+                    <p class="card-text restaurantReview" style="text-align: center;">"{{ this.review_content }}"
                       </p>
                     {{/each}}
                   </div>
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group list-group-flush restaurantInfo">
                     
-                    <li class="list-group-item">Address:{{ res_address}}</li>
+                    <li class="list-group-item">Address: {{ res_address}}</li>
                     
                     
 
@@ -87,9 +86,10 @@
 
                     <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
+                  <div class="card-body restaurantLinks">
+                    <a href="#" class="card-link">{{ res_website }}</a>
                     <a href="#" class="card-link">Directions</a>
+                  </div>
                   </div>
                 </div>
                 <!-- End Card -->
