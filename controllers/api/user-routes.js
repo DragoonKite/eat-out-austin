@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 const router = require('express').Router();
 const { response } = require('express');
-const { Restaurant, User, Review } = require("../../models");
+const { Restaurant, User, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -92,7 +93,7 @@ router.post('/login', (req, res) => {
   });
 });
 
-router.post('/logout', withAuth , (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();

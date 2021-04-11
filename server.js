@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable import/newline-after-import */
+/* eslint-disable import/order */
 const express = require('express');
 const routes = require('./controllers');
 const path = require('path');

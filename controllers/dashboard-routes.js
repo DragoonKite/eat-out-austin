@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Review, User, Restaurant } = require('../models');
@@ -26,18 +27,16 @@ router.get('/', withAuth, (req, res) => {
       model: Review,
       attributes: ['review_content']
     }
-  }).then((dbRestData) => {
-    // serialize data before passing to template
-    const restaurants = dbRestData.map((restaurant) =>
-      restaurant.get({ plain: true })
-    );
-    res.render('dashboard', { restaurants, loggedIn: true }).catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  }).then(restData => {
+    const restaurants = restData.map(restaurant => restaurant.get({ plain: true }));
+    res.render('dashboard', { restaurants, loggedIn: true });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
-  res.render('dashboard');
 });
+
 
 router.get('/edit/:id', withAuth, (req, res) => {
   Restaurant.findOne({

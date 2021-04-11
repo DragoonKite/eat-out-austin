@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Restaurant, User, Review, Vote} = require('../models');
