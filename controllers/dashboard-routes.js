@@ -4,16 +4,38 @@ const { Review, User, Restaurant } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-  // Restaurant.findAll().then((dbRestData) => {
-  //   // serialize data before passing to template
-  //   const restaurants = dbRestData.map((restaurant) =>
-  //     restaurant.get({ plain: true })
-  //   );
-  //   res.render('dashboard', { restaurants, loggedIn: true }).catch((err) => {
-  //     console.log(err);
-  //     res.status(500).json(err);
-  //   });
-  // });
+  Restaurant.findAll({
+    attributes: [
+      'id',
+      'res_name',
+      'res_phone',
+      'res_website',
+      'res_address',
+      'food_style',
+      'brick_mortar',
+      'trailer',
+      'delivery',
+      'takeout_curbside',
+      'reservations',
+      'on_site_parking',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
+
+    ],
+    include:
+    {
+      model: Review,
+      attributes: ['review_content']
+    }
+  }).then((dbRestData) => {
+    // serialize data before passing to template
+    const restaurants = dbRestData.map((restaurant) =>
+      restaurant.get({ plain: true })
+    );
+    res.render('dashboard', { restaurants, loggedIn: true }).catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  });
   res.render('dashboard');
 });
 
