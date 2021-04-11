@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Review, User, Restaurant } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
   // Restaurant.findAll().then((dbRestData) => {
   //   // serialize data before passing to template
   //   const restaurants = dbRestData.map((restaurant) =>

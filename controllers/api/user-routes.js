@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Restaurant, User, Review } = require("../../models");
 const withAuth = require('../../utils/auth');
 
@@ -86,6 +87,7 @@ router.post('/login', (req, res) => {
   
       res.json({ user: userData, message: 'You are now logged in!' });
       alert('You are now logged in')
+      response.redirect('/dashboard/')
     });
   });
 });
