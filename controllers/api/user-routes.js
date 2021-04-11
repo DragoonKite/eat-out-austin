@@ -62,7 +62,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  console.log(req)
   // expects {email: 'homeboy@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
@@ -89,7 +88,7 @@ router.post('/login', (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!' });
       alert('You are now logged in') 
     });
-    res.render('/dashboard/')
+    res.replace('/dashboard/')
   });
 });
 
