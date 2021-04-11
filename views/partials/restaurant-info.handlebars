@@ -7,13 +7,13 @@
                 <div class="carousel slide col-md-5" data-ride="carousel">
                   <h2>{{res_name}}</h2>
                   <div class="carousel-inner leftSide">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-interior.jpg" class="d-block w-100" alt="{{format_name res_name}} Interior">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
                     </div>
                   </div>
@@ -21,28 +21,23 @@
                 <!-- End Carousel -->
                 <!-- Start Card -->
                 <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
-                  <div class="card-body" style="overflow: scroll">
-                    <h5 class="card-title">{{res_name}}</h5>
-
-                    
-                    {{!-- <h1>{{#each reviews}}
-                      {{#each users}}
-                    {{ this.displayName }}
-                    {{/each}}
-                    {{/each}}
-
-                      {{!-- {{#each reviews}} --}}
-                      {{!-- {{#each user}} --}}
-                      {{!-- {{ displayName}} --}}
-                      {{!-- {{/each}} --}}
-                      {{!-- {{/each}} --}}
-                      {{!-- </h1> --}}
+                  <div class="card-body">
 
                     {{#each reviews}}
-                    <p class="card-text">"{{ this.review_content }}"
-                      </p>
+                    <p class="card-text restaurantReview" style="text-align: center;">"{{ this.review_content }}"
+                    </p>
                     {{/each}}
+
+{{!-- No luck yet displaying the user displayName on each review --}}
+                  {{!-- <h3>
+                    {{#user}}
+                    {{#if @first}}
+                    {{this.displayName}}
+                    {{/if}}
+                    {{/user}}</h3> --}}
+
                   </div>
+
                   <ul class="list-group list-group-flush restaurantInfo">
                     
                     <li class="list-group-item">Address: {{ res_address}}</li>
@@ -87,8 +82,10 @@
 
                     <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
+                  <div class="card-body restaurantLinks">
                   <div class="card-body">
                     <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
+                    {{!-- <a href="#" class="card-link">Directions</a> --}}
                     {{!-- <button href="#" class="direc-btn card-link"  value="{{res_address}}">Directions</button> --}}
                   </div>
                   </div>

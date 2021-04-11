@@ -13,13 +13,9 @@ const userData = [
     displayName: 'Anita',
     firstName: 'Anita',
     lastName: 'Richard',
-<<<<<<< HEAD
-    email: 'anita@gmail.com',
-    password: 'password123'
-=======
+    // changed email not sure why
     email: 'password123',
     password: 'password123',
->>>>>>> e40013d41008e1a23987ed38ea522d6b2c91d536
   },
   {
     displayName: 'Cory',

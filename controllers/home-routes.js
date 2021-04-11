@@ -80,12 +80,10 @@ router.get('/restaurants/', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
+    res.render('dashboard');
+  } else {
   res.render('login');
+  }
 });
-
 
 module.exports = router;
