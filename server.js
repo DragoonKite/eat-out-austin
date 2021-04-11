@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable import/newline-after-import */
+/* eslint-disable import/order */
 const express = require('express');
 const routes = require('./controllers');
 const path = require('path');
@@ -5,9 +8,11 @@ const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({helpers});
 const session = require('express-session');
+const passport = require('passport'),
+
 
 // livereload
-const livereload = require('livereload');
+livereload = require('livereload');
 const connectLivereload = require('connect-livereload');
 
 const liveReloadServer = livereload.createServer();
@@ -22,6 +27,7 @@ liveReloadServer.server.once('connection', () => {
 
 const app = express();
 app.use(connectLivereload());
+app.use(passport.initialize());
 const PORT = process.env.PORT || 3001;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
