@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
 
 // get restaurants by food style
 router.get('/fs/:foodstyle', (req, res) => {
