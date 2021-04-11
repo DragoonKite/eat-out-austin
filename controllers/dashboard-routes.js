@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   //     res.status(500).json(err);
   //   });
   // });
-  res.render('dashboard')
+  res.render('dashboard');
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
