@@ -1,35 +1,79 @@
 <br>
-<section>
+<section class="mt-5">
     <section>
   <h2>Add New Restaurant</h2>
 
-  <form class="new-post-form">
+  <form class="new-restaurant-form">
+
       <div class="mb-3">
-        <label for="post-title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="post-title" name="post-title">
+        <label for="restaurant-name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="restaurant-name" name="restaurant-name">
       </div>
+
       <div class="mb-3">
-        <label for="post-content" class="form-label">Content:</label>
-        <textarea class="form-control" id="post-content" name="post-content" cols="30" rows="10"></textarea>
-      </div>    
+        <label for="restaurant-phone" class="form-label">Phone #</label>
+        <input type="text" class="form-control" id="restaurant-phone" name="restaurant-phone">
+      </div>
+
+      <div class="mb-3">
+        <label for="restaurant-site" class="form-label">Website</label>
+        <input type="text" class="form-control" id="restaurant-site" name="restaurant-site">
+      </div>
+
+      <div class="mb-3">
+        <label for="restaurant-address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="restaurant-address" name="restaurant-address">
+      </div>
+
+      <label for="food-style" class="form-label">Food Style</label>
+      <select name="food-style" id="food-style">
+        <option value="Farm to Table">Farm to Table</option>
+        <option value="Southern American">Southern American</option>
+        <option value="Vegeterian & Vegan">Vegeterian &#38; Vegan</option>
+        <option value="Asian">Asian</option>
+        <option value="TX BBQ">TX BBQ</option>
+        <option value="Seafood">Seafood</option>
+        <option value="Mexican">Mexican</option>
+        <option value="French">French</option>
+        <option value="Italian">Italian</option>
+        <option value="Indian">Indian</option>
+        <option value="Sushi">Sushi</option>
+        <option value="Burgers">Burgers</option>
+      </select>
+
+      <label for="brick-mortar">Check if the restaurant is a Brick and Mortar</label>
+      <input type="radio" name="brick-mortar" value="true">
+      
+      <label for="trailer">Check if the restaurant is a Food Truck</label>
+      <input type="radio" name="trailer" value="true">
+
+
+      <label for="delivery">Check if the restaurant offers delivery</label>
+      <input type="radio" name="delivery" value="true">
+
+      <label for="takeout-curbside">Check if the restaurant offers curbside takeout</label>
+      <input type="radio" name="takeout-curbside" value="true">
+
+      <label for="reservations">Check if the restaurant takes reservations</label>
+      <input type="radio" name="reservations" value="true">
+
+      <label for="on-site-parking">Check if the restaurant has on-site parking</label>
+      <input type="radio" name="on-site-parking" value="true">
 
     <button type="submit" class="btn btn-outline-dark">Create</button>
   </form>
 </section>
     <h2>Approved Restaurants</h2>
 
-    {{#if restaurants.length}}
-    <div>
-        {{#each restaurant as |restaurant|}}
-        <div>
-            {{> restaurant-info restaurant}}
-                <a href="/dashboard/edit/{{restaurant.id}}" class="card-link">Edit restaurant.</a>
-            </div>
-                
-        </div>
-        {{/each}}
-    </div>
-    {{/if}}
+    {{!-- {{#if restaurants.length}} --}}
+  
+    {{#each restaurant as |restaurant|}}
+        {{> restaurant-info restaurant}}
+        {{!-- <a href="/dashboard/edit/{{restaurant.id}}" class="card-link">Edit restaurant.</a>
+        </div> --}}
+    {{/each}}
+ 
+    {{!-- {{/if}} --}}
 </section>
 
-<script src="/javascript/add-post.js"></script>
+<script src="/javascript/add-restaurant.js"></script>

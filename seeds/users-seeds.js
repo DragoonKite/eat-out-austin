@@ -13,22 +13,9 @@ const userData = [
     displayName: 'Anita',
     firstName: 'Anita',
     lastName: 'Richard',
-<<<<<<< HEAD
-<<<<<<< HEAD
-    email: 'password123',
-    password: 'password123',
-=======
     email: 'anita@gmail.com',
     password: 'password123'
->>>>>>> juan/authentication
-=======
-    email: 'anita@gmail.com',
-    password: 'password123'
-=======
-    email: 'password123',
-    password: 'password123',
->>>>>>> e40013d41008e1a23987ed38ea522d6b2c91d536
->>>>>>> 0a5c2a80d3608ab66dbce613b3c8a17eb2f0de9a
+    // changed email not sure why
   },
   {
     displayName: 'Cory',
