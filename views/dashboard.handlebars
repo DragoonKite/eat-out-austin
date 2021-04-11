@@ -1,32 +1,32 @@
 <br>
-<section class="mt-5">
+<section class="mt-5 container ">
     <section>
   <h2>Add New Restaurant</h2>
 
-  <form class="new-restaurant-form">
+  <form class="new-restaurant-form mb-5">
 
       <div class="mb-3">
         <label for="restaurant-name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="restaurant-name" name="restaurant-name">
+        <input type="text" class="form-control w-50" id="restaurant-name" name="restaurant-name">
       </div>
 
       <div class="mb-3">
         <label for="restaurant-phone" class="form-label">Phone #</label>
-        <input type="text" class="form-control" id="restaurant-phone" name="restaurant-phone">
+        <input type="text" class="form-control w-50" id="restaurant-phone" name="restaurant-phone">
       </div>
 
       <div class="mb-3">
         <label for="restaurant-site" class="form-label">Website</label>
-        <input type="text" class="form-control" id="restaurant-site" name="restaurant-site">
+        <input type="text" class="form-control w-50" id="restaurant-site" name="restaurant-site">
       </div>
 
       <div class="mb-3">
         <label for="restaurant-address" class="form-label">Address</label>
-        <input type="text" class="form-control" id="restaurant-address" name="restaurant-address">
+        <input type="text" class="form-control w-50" id="restaurant-address" name="restaurant-address">
       </div>
 
-      <label for="food-style" class="form-label">Food Style</label>
-      <select name="food-style" id="food-style">
+      <label for="food-style" class="form-label">Food Style</label> <br>
+      <select name="food-style" id="food-style" class="custom-select w-50">
         <option value="Farm to Table">Farm to Table</option>
         <option value="Southern American">Southern American</option>
         <option value="Vegeterian & Vegan">Vegeterian &#38; Vegan</option>
@@ -41,24 +41,36 @@
         <option value="Burgers">Burgers</option>
       </select>
 
-      <label for="brick-mortar">Check if the restaurant is a Brick and Mortar</label>
-      <input type="radio" name="brick-mortar" value="true">
+      <div class="custom-control custom-radio mt-3">
+        <input type="radio" name="brick-mortar" value="true" class="custom-control-input">
+        <label class="custom-control-label" for="brick-mortar">Check if the restaurant is a Brick and Mortar</label>
+      </div>
+
       
-      <label for="trailer">Check if the restaurant is a Food Truck</label>
-      <input type="radio" name="trailer" value="true">
+      <div class="custom-control custom-radio">
+        <input type="radio" name="trailer" value="true" class="custom-control-input">
+        <label for="trailer" class="custom-control-label">Check if the restaurant is a Food Truck</label>
+      </div>
 
+      <div class="custom-control custom-radio">
+        <input type="radio" name="delivery" value="true" class="custom-control-input">
+        <label for="delivery" class="custom-control-label">Check if the restaurant offers delivery</label>
+      </div>
 
-      <label for="delivery">Check if the restaurant offers delivery</label>
-      <input type="radio" name="delivery" value="true">
+      <div class="custom-control custom-radio">
+        <input type="radio" name="takeout-curbside" value="true" class="custom-control-input">
+        <label for="takeout-curbside" class="custom-control-label">Check if the restaurant offers curbside takeout</label>
+      </div>
 
-      <label for="takeout-curbside">Check if the restaurant offers curbside takeout</label>
-      <input type="radio" name="takeout-curbside" value="true">
+      <div class="custom-control custom-radio">
+        <input type="radio" name="reservations" value="true" class="custom-control-input">
+        <label for="reservations" class="custom-control-label">Check if the restaurant takes reservations</label>
+      </div>
 
-      <label for="reservations">Check if the restaurant takes reservations</label>
-      <input type="radio" name="reservations" value="true">
-
-      <label for="on-site-parking">Check if the restaurant has on-site parking</label>
-      <input type="radio" name="on-site-parking" value="true">
+      <div class="custom-control custom-radio mb-4">
+        <input type="radio" name="on-site-parking" value="true" class="custom-control-input">
+        <label for="on-site-parking" class="custom-control-label">Check if the restaurant has on-site parking</label>
+      </div>
 
     <button type="submit" class="btn btn-outline-dark">Create</button>
   </form>
@@ -67,7 +79,7 @@
 
     {{!-- {{#if restaurants.length}} --}}
   
-    {{#each restaurant as |restaurant|}}
+    {{#each restaurants as |restaurant|}}
         {{> restaurant-info restaurant}}
         {{!-- <a href="/dashboard/edit/{{restaurant.id}}" class="card-link">Edit restaurant.</a>
         </div> --}}
