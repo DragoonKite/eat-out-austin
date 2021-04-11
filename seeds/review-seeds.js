@@ -47,7 +47,7 @@ const reviewData = [
     user_id: 6,
     res_reviewed: 6,
     review_content:
-      "Loro features a tasty fusion of Asian inspired recipes and Texas smokehouse BBQ. They feature a more casual style of 'counter service' where you order up front and choose a seat. They have a great outdoor dining area as well as a roomie indoor dining area. Their smoked oak salmon and char siew pork belly are high on my list. I also enjoy sipping on a frozen gin & tonic. Parking is plentiful, and curbside pickup makes no contact dining a breeze.",
+      "Loro features a tasty fusion of Asian inspired recipes and Texas smokehouse BBQ. They feature a more casual style of 'counter service' where you order up front and choose a seat. They have a great outdoor dining area as well as a roomie indoor dining area. Their oak-smoked salmon and char siew pork belly are high on my list. I also enjoy sipping on a frozen gin & tonic. Parking is plentiful, and curbside pickup makes no contact dining a breeze.",
     review_approval: true,
   },
   {
