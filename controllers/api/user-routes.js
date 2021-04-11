@@ -61,6 +61,7 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
+  console.log(req)
   // expects {email: 'homeboy@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
@@ -121,7 +122,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', /* withAuth,  */(req, res) => {
   User.destroy({
     where: {
       id: req.params.id,
