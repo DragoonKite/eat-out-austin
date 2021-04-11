@@ -82,8 +82,12 @@
                     <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
                   <div class="card-body restaurantLinks">
-                    <a href="#" class="card-link">{{ res_website }}</a>
-                    <a href="#" class="card-link">Directions</a>
+                  <div class="card-body">
+
+                    {{!-- <a href="#" class="card-link">{{ res_website }}</a> --}}
+                    <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
+                    {{!-- <a href="#" class="card-link">Directions</a> --}}
+                    <button href="#" class="direc-btn card-link"  value="{{res_address}}">Directions</button>
                   </div>
                   </div>
                 </div>

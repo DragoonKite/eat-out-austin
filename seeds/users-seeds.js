@@ -13,8 +13,9 @@ const userData = [
     displayName: 'Anita',
     firstName: 'Anita',
     lastName: 'Richard',
-    email: 'anita@gmail.com',
-    password: 'password123'
+    // changed email not sure why
+    email: 'password123',
+    password: 'password123',
   },
   {
     displayName: 'Cory',

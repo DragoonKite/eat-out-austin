@@ -3,10 +3,37 @@ const sequelize = require('../config/connection');
 const { Restaurant, User, Review, Vote} = require('../models');
 
 router.get('/', (req, res) => {
-  Restaurant.findAll()
-    .then((homeData) => {
-      res.render('homepage');
-      // res.json(homeData);
+  console.log(req.session)
+  Restaurant.findAll({
+    attributes:[
+      'id',
+      'res_name',
+      'res_phone',
+      'res_website',
+      'res_address',
+      'food_style',
+      'brick_mortar',
+      'trailer',
+      'delivery',
+      'takeout_curbside',
+      'reservations',
+      'on_site_parking',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
+    ],
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ['displayName']
+    //   }
+    // ]
+  })
+    .then((restData) => {
+      const restaurants = restData.map(restaurant => restaurant.get({ plain: true }));
+
+      res.render('homepage', {
+        restaurants,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -50,17 +77,12 @@ router.get('/restaurants/', (req, res) => {
       });
 }); 
 
+
 router.get('/login', (req, res) => {
-  // Can change this between true and false to see dashboard or login page
-  if (!req.session.loggedIn) {
-    res.render('login');
-  } else {
+  if (req.session.loggedIn) {
     res.render('dashboard');
-
-  // if (req.session.loggedIn) {
-  //   res.redirect('/dashboard');
-  //   return;
-
+  } else {
+  res.render('login');
   }
 });
 
