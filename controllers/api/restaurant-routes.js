@@ -1,7 +1,3 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable no-shadow */
-/* eslint-disable prettier/prettier */
-/* eslint-disable quotes */
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Restaurant, User, Review, Vote } = require("../../models");
@@ -189,7 +185,7 @@ router.put('/:id', withAuth, (req, res) => {
 
 // delete restaurant
 router.delete('/:id', withAuth, (req, res) => {
-  Restaurant.destroy({
+  Post.destroy({
     where: {
       id: req.params.id,
     },
