@@ -51,6 +51,7 @@ router.get('/restaurants/', (req, res) => {
 }); 
 
 router.get('/login', (req, res) => {
+  // Can change this between true and false to see dashboard or login page
   if (!req.session.loggedIn) {
     res.render('login');
   } else {
@@ -59,11 +60,8 @@ router.get('/login', (req, res) => {
   // if (req.session.loggedIn) {
   //   res.redirect('/dashboard');
   //   return;
-  
+
   }
 });
-
-//   res.render('login');
-// });
 
 module.exports = router;
