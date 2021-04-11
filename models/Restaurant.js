@@ -30,7 +30,7 @@ Restaurant.init(
       type: DataTypes.STRING,
       unique: true,
       validate: {
-        isurl: true,
+        isUrl: true,
       },
       defaultValue: 'None',
     },
