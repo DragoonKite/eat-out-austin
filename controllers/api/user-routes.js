@@ -1,14 +1,15 @@
 const router = require('express').Router();
-const { Restaurant, User, Review } = require('../../models');
+const { response } = require('express');
+const { Restaurant, User, Review } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
-    attributes: { exclude: ['password'] },
+    attributes: { exclude: ['password'] }
   })
-    .then((userData) => res.json(userData))
-    .catch((err) => {
+    .then(userData => res.json(userData))
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -19,24 +20,24 @@ router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
-      id: req.params.id,
-    },
+      id: req.params.id
+    }
   })
-    .then((userData) => {
+    .then(userData => {
       if (!userData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
       res.json(userData);
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 router.post('/', (req, res) => {
-  // expects {username: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
+  // expects {displayName: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
   User.create({
     displayName: req.body.displayName,
     firstName: req.body.firstName,
@@ -48,13 +49,13 @@ router.post('/', (req, res) => {
       console.log(req.body.displayName);
       req.session.save(() => {
         req.session.user_id = userData.id;
-        req.session.username = userData.username;
+        req.session.displayName = userData.displayName;
         req.session.loggedIn = true;
-
+  
         res.json(userData);
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -65,9 +66,9 @@ router.post('/login', (req, res) => {
   // expects {email: 'homeboy@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
-      email: req.body.email,
-    },
-  }).then((userData) => {
+      email: req.body.email
+    }
+  }).then(userData => {
     if (!userData) {
       res.status(400).json({ message: 'No user with that email address!' });
       return;
@@ -82,60 +83,63 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.username = userData.username;
+      req.session.displayName = userData.displayName;
       req.session.loggedIn = true;
-
+  
       res.json({ user: userData, message: 'You are now logged in!' });
+      alert('You are now logged in') 
     });
+    res.render('/dashboard/')
   });
 });
 
-router.post('/logout', withAuth, (req, res) => {
+router.post('/logout', withAuth , (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  } else {
+  }
+  else {
     res.status(404).end();
   }
 });
 
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', withAuth , (req, res) => {
   // expects {username: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
 
   User.update(req.body, {
     individualHooks: true,
     where: {
-      id: req.params.id,
-    },
+      id: req.params.id
+    }
   })
-    .then((userData) => {
+    .then(userData => {
       if (!userData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
       res.json(userData);
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.delete('/:id', /* withAuth,  */(req, res) => {
+router.delete('/:id', withAuth , (req, res) => {
   User.destroy({
     where: {
-      id: req.params.id,
-    },
+      id: req.params.id
+    }
   })
-    .then((userData) => {
+    .then(userData => {
       if (!userData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
       res.json(userData);
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });

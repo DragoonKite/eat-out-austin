@@ -29,13 +29,15 @@ router.get('/', (req, res) => {
       }
     })
     .then(homeData => {
-        res.render('restaurant');
-        res.json(homeData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+      const restaurant = homeData.map(restaurant => restaurant.get({ plain: true}));
+      
+      res.render('restaurants', {restaurant});
+     
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // get restaurants by food style

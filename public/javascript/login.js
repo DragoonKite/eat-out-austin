@@ -23,7 +23,7 @@ async function signupFormHandler(event) {
       });
 
        if (response.ok) {
-        document.location.replace('/homepage/');
+        res.render('/dashboard');
       } else {
         alert(response.statusText);
       }
@@ -47,17 +47,14 @@ async function loginFormHandler(event) {
       });
       console.log('HI HI');
       if (response.ok) {
-        console.log('HI')
-        res.render('/homepage/');
+        document.location.replace('/dashboard/');
       } else {
         alert(response.statusText);
       }
     }
-  }
+}
 
-
+document.querySelector('.submitlogin').addEventListener('submit', loginFormHandler);
   
-document.querySelector('.login-form').addEventListener('.submitlogin', loginFormHandler);
-  
-document.querySelector('#signUp').addEventListener('.submitsignup', signupFormHandler);
+document.querySelector('.submitsignup').addEventListener('submit', signupFormHandler);
 
