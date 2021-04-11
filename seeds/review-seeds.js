@@ -103,7 +103,7 @@ const reviewData = [
     user_id: 3,
     res_reviewed: 13,
     review_content:
-      "If you don't know where you're going you may think you're lost until you see the line of cars parked on the street leading you to warmly-lit outdoor dining area surrounding an old house. Viola, you're found Justine's Brasserie! This French restaurant has classic moules frites and nicoise salad as well as an ever changing French wine list. The music-loving owner/chef has hundreds of records that fill the air with the warm tones only vinyl can provide. On the side of the house you can find petanque being played that will bring you back to that one time you were in the Luxembourg gardens in Paris on Bastille Day 10 years ago. Open until midnight this is wear knife-scarred, tattooed chefs go to relax and snazzy clad neighbors go to laugh and toast to each other's health.",
+      "If you don't know where you're going you may think you're lost until you see the line of cars parked on the street leading you to warmly-lit outdoor dining area surrounding an old house. Viola, you're found Justine's Brasserie! This French restaurant has classic moules frites and nicoise salad as well as an ever changing French wine list. The music-loving owner/chef has hundreds of records that fill the air with the warm tones only vinyl can provide. On the side of the house you can find petanque being played that will bring you back to that one time you were in the Luxembourg gardens in Paris on Bastille Day 10 years ago. Open until midnight this is where knife-scarred, tattooed chefs go to relax and snazzy clad neighbors go to laugh and toast to each other's health.",
     review_approval: true,
   },
   {

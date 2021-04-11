@@ -52,14 +52,8 @@ router.get('/restaurants/', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-<<<<<<< HEAD
-    res.render('login');
-  } else {
-    console.log("wrooooong")
-=======
     res.redirect('/dashboard');
     return;
->>>>>>> 316d780e24200e6ca6ba309fafcd04fbb263894a
   }
 });
 
