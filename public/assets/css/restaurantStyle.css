@@ -1,0 +1,25 @@
+.restaurantReview {
+    min-height: auto;
+    padding: 0 10px 0 10px;
+}
+
+.restaurantInfo {
+    width: auto;
+    height: auto;
+    background-color: cadetblue !important;
+
+}
+
+.restaurantLinks {
+    height: auto;
+
+}
+
+/* .card {
+    min-height: 50px;
+    max-height: 900px;
+} */
+
+.card-body {
+    height: auto;
+}
