@@ -1,0 +1,87 @@
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/">Eat Out, Austin</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+        type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <div class="dropdown">
+            <button class="btn2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Choose Another Style
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button class="dropdown-item"  href="/restaurant#farm-to-table" target="_blank" value="Farm to Table">Farm To Table </button>
+                <button class="dropdown-item" href="/restaurant#southern" target="_blank" value="Southern American">Southern</button>
+                <button class="dropdown-item" href="/restaurant#veggie" target="_blank" value="Vegetarian & Vegan">Vegan and Vegetarian</button>
+                <button class="dropdown-item" href="/restaurant#asian" target="_blank" value="Asian">Asian & Asian Fusion</button>
+                <button class="dropdown-item" href="/restaurant#bbq" target="_blank" value="TX BBQ">BBQ</button>
+                <button class="dropdown-item" href="/restaurant#seafood" target="_blank" value="Seafood">Seafood</button>
+                <button class="dropdown-item" href="/restaurant#latin-american" target="_blank" value="Mexican">Mexican</button>
+                <button class="dropdown-item" href="/restaurant#french" target="_blank" value="French">French</button>
+                <button class="dropdown-item" href="/restaurant#italian" target="_blank" value="Italian">Italian</button>
+                <button class="dropdown-item" href="/restaurant#indian" target="_blank" value="Indian">Indian</button>
+                <button class="dropdown-item" href="/restaurant#japanese" target="_blank" value="Sushi">Sushi</button>
+                <button class="dropdown-item" href="/restaurant#burgers" target="_blank" value="Burgers">Burgers</button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+      <!-- Large Heading-->
+      <h1 class="page-section text-uppercase mb-0">The insider scoop on some of the best places to eat in the ATX</h1>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-section dinner" id="farm-to-table">
+    <div class="container">
+      <h3 class="page-section text-center text-uppercase text-secondary mb-0" style= "font-size: 50px">
+        {{#restaurant}}
+        {{#if @first}}
+        {{this.food_style}}
+        {{/if}}
+        {{/restaurant}}</h3>
+        
+      <div class="divider-custom">
+        <div class="divider-custom-line" style= ></div>
+        <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      {{#each restaurant as |restaurant|}}
+      {{> restaurant-info restaurant}}
+      {{/each}}
+
+
+  <!-- Footer-->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="text-center">
+          <a class="nav-link text-white" href="#page-top">BACK TO TOP OF PAGE</a>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Created by Section-->
+  <div class="created-by py-4 text-center text-white">
+    <div class="container"><small>Created by: Best-Team</small></div>
+  </div>

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Restaurant, User, Review } = require("../../models");
 const withAuth = require('../../utils/auth');
 
@@ -35,19 +36,20 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth , (req, res) => {
-  // expects {username: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
+router.post('/', (req, res) => {
+  // expects {displayName: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
   User.create({
-    displayname: req.body.displayname,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    displayName: req.body.displayName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   })
     .then(userData => {
+      console.log(req.body.displayName);
       req.session.save(() => {
         req.session.user_id = userData.id;
-        req.session.username = userData.username;
+        req.session.displayName = userData.displayName;
         req.session.loggedIn = true;
   
         res.json(userData);
@@ -80,10 +82,12 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.username = userData.username;
+      req.session.displayName = userData.displayName;
       req.session.loggedIn = true;
   
       res.json({ user: userData, message: 'You are now logged in!' });
+      alert('You are now logged in')
+      response.redirect('/dashboard/')
     });
   });
 });
