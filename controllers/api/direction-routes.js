@@ -8,4 +8,16 @@ router.get('/:address', (req, res) => {
     res.json(restUrl)
 })
 
+//get directions to restaurant
+router.get('/latlon/:latlon', (req,res) => {
+    const latlon = req.params.latlon.split(',');
+    const lat = latlon[0];
+    const lon = latlon[1];
+    const userLat = latlon[2];
+    const userLon = latlon[3];
+    console.log (lat, lon, userLat, userLon)
+    const api = process.env.TOMTOM_API;
+    const direcUrl = "https://api.tomtom.com/routing/1/calculateRoute/" + userLat + ',' + userLon + ":" + lat +',' + lon + '/json?instructionsType=text&language=en-US&vehicleHeading=90&sectionType=traffic&travelMode=car&vehicleMaxSpeed=120&key=' + api;
+    res.json(direcUrl)
+})
 module.exports = router;

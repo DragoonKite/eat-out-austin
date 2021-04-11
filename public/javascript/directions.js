@@ -26,11 +26,10 @@ const getLocation = function(){
 };
 
 $(".direc-btn").on('click', function(){
-    //get restaurant location
-    //restaurant api
+    //address stored in Model
     let address = this.value;
-    console.log(address)
     
+    //send address to get url for lat/lon fetch
     fetch(`/api/directions/${address}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
@@ -38,12 +37,35 @@ $(".direc-btn").on('click', function(){
     .then(function(response) {
         if(response.ok) {
             response.json().then(function(data){
+                //send url to get lat/lon
                 fetch(data).then(function(response){
                     if(response.ok){
                         response.json().then(function(data){
                             const restLat = data.data[0].latitude;
                             const restLong = data.data[0].longitude;
-                            console.log(restLat,restLong)
+                            //send usr&restaurant lat/lon to get url fro directions
+                            fetch(`/api/directions/latlon/${restLat},${restLong},${userLat},${userLon}`, {
+                                method: 'GET',
+                                headers: {'Content-Type': 'application/json'}
+                            }).then(function(response) {
+                                if(response.ok) {
+                                    response.json().then(function(data) {
+                                        //send url to api to get directions
+                                        fetch(data).then(function(response) {
+                                            if(response.ok){
+                                                response.json().then(function(data){
+                                                    //parse out data and pull out higher level direction group
+                                                    let iGroups = data.routes[0].guidance.instructionGroups
+                                                    console.log(iGroups)
+                                                    iGroups.forEach(instruction => {
+                                                        console.log(instruction.groupMessage)
+                                                    });
+                                                })
+                                            }
+                                        })
+                                    })
+                                }
+                            })
                         })
                     }
                 })
