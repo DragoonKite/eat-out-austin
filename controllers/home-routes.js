@@ -50,6 +50,28 @@ router.get('/restaurants/', (req, res) => {
       });
 }); 
 
+router.get('restaurant/fs/:foodstyle', (req, res) => {
+  Restaurant.findAll({
+    where: {
+      food_style: req.params.foodstyle,
+    },
+    include: {
+      model: Review,
+    },
+  })
+    .then((restData) => {
+      console.log('Testing');
+      const restaurant = restData.map((restaurant) =>
+        restaurant.get({ plain: true })
+      );
+      res.render('restaurant', { restaurant });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/dashboard');
