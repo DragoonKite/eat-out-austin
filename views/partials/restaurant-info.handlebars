@@ -7,13 +7,13 @@
                 <div class="carousel slide col-md-5" data-ride="carousel">
                   <h2>{{res_name}}</h2>
                   <div class="carousel-inner leftSide">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-interior.jpg" class="d-block w-100" alt="{{format_name res_name}} Interior">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item imageSize">
                       <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
                     </div>
                   </div>
@@ -39,7 +39,7 @@
                       {{!-- </h1> --}}
 
                     {{#each reviews}}
-                    <p class="card-text">"{{ this.review_content }}"
+                    <p class="card-text restaurantReview">"{{ this.review_content }}"
                       </p>
                     {{/each}}
                   </div>
@@ -87,7 +87,7 @@
 
                     <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
-                  <div class="card-body">
+                  <div class="card-body restaurantLinks">
                     <a href="#" class="card-link">{{ res_website }}</a>
                     <a href="#" class="card-link">Directions</a>
                   </div>
