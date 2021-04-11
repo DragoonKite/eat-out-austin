@@ -5,11 +5,7 @@ const homeRoutes = require('./home-routes.js');
 const dashboardRoutes = require('./home-routes.js');
 
 router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
 router.use('/dashboard', dashboardRoutes);
-
-router.use((req, res) => {
-  res.status(404).end();
-});
+router.use('/api', apiRoutes);
 
 module.exports = router;

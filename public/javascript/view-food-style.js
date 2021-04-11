@@ -2,7 +2,7 @@ async function foodStyleHandler(event) {
   event.preventDefault();
   const food_style = this.value;
 
-  const response = await fetch(`restaurant/fs/${food_style}`, {
+  const response = await fetch(`/api/restaurant/fs/${food_style}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });

@@ -29,7 +29,7 @@ const sequelize = require('./config/connection');
 
 // Express
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('views/images'));
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -55,6 +55,6 @@ app.use(session(sess));
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false}).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
