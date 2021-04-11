@@ -1,28 +1,27 @@
-<br>
 <section class="mt-5 container " style="padding-left: 2%; padding-top: 100px">
     <section>
-  <h2>Add New Restaurant</h2>
+  <h2>Edit Restaurant</h2>
 
   <form class="new-restaurant-form mb-5">
-
+    {{!-- name --}}
       <div class="mb-3">
         <label for="restaurant-name" class="form-label">Name</label>
-        <input type="text" class="form-control w-50" id="restaurant-name" name="restaurant-name">
+        <input type="text" class="form-control w-50" id="restaurant-name" name="restaurant-name" value="{{restaurant.res_name}}">
       </div>
-
+    {{!-- phone # --}}
       <div class="mb-3">
         <label for="restaurant-phone" class="form-label">Phone #</label>
-        <input type="text" class="form-control w-50" id="restaurant-phone" name="restaurant-phone">
+        <input type="text" class="form-control w-50" id="restaurant-phone" name="restaurant-phone" value="{{restaurant.res_phone}}">
       </div>
-
+    {{!-- website --}}
       <div class="mb-3">
-        <label for="restaurant-site" class="form-label">Website</label>
-        <input type="text" class="form-control w-50" id="restaurant-site" name="restaurant-site">
+        <label for="restaurant-site" class="form-label" >Website</label>
+        <input type="text" class="form-control w-50" id="restaurant-site" name="restaurant-site" value="{{ restaurant.res_website }}">
       </div>
-
+    {{!-- Address --}}
       <div class="mb-3">
         <label for="restaurant-address" class="form-label">Address</label>
-        <input type="text" class="form-control w-50" id="restaurant-address" name="restaurant-address">
+        <input type="text" class="form-control w-50" id="restaurant-address" name="restaurant-address" value="{{restaurant.res_address}}">
       </div>
 
       <label for="food-style" class="form-label">Food Style</label> <br>
@@ -72,22 +71,11 @@
         <label for="on-site-parking" class="custom-control-label">Check if the restaurant has on-site parking</label>
       </div>
 
-    <button type="submit" class="btn btn-outline-dark">Create</button>
+    <button type="submit" class="btn btn-outline-dark">Save Changes</button>
+    <button type="submit" class="btn btn-outline-dark">Delete Restaurant</button>
+
   </form>
 </section>
-    <h2 class="mb-4">Approved Restaurants</h2>
 
-    {{!-- {{#if restaurants.length}} --}}
-  
-    {{#each restaurants as |restaurant|}}
-        <div class="container">
-        <a href="/dashboard/edit/{{restaurant.id}}" class="card-link">Edit restaurant.</a>
-        {{> restaurant-info restaurant}}
-        
-        </div>
-    {{/each}}
- 
-    {{!-- {{/if}} --}}
-</section>
-
-<script src="/javascript/add-restaurant.js"></script>
+<script src="/javascript/edit-restaurant.js"></script>
+<script src="/javascript/delete-restaurant.js"></script>
