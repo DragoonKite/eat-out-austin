@@ -1,4 +1,3 @@
-<div>
            
   <!-- Start Aviary -->
   <div class="container-fluid">
@@ -8,8 +7,8 @@
       <div class="carousel slide col-md-5" data-ride="carousel">
         <h2>{{res_name}}</h2>
         {{#if res_approval}}
-        <div class="carousel-inner leftSide">
-          <div class="carousel-item active imageSize">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
             <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
           </div>
           <div class="carousel-item imageSize">
@@ -43,49 +42,58 @@
         </div>
 
         <ul class="list-group list-group-flush restaurantInfo">
+<div class="row">
+<div class="col justify-content">
           
-          <li class="list-group-item">Address: {{ res_address}}</li>
+          <ul class="list-group-item border-0 list-group-flush">Address: {{ res_address}}</ul>
           
                     
 
           {{#if trailer }}
-          <li class="list-group-item">Trailer: Yes</li>
+          <ul class="list-group-item border-0">Trailer: Yes</ul>
           {{ else }}
-          <li class="list-group-item">Trailer: No</li>
+          <ul class="list-group-item border-0">Trailer: No</ul>
           {{/if}}
 
           {{#if delivery }}
-          <li class="list-group-item">Delivery: Yes</li>
+          <li class="list-group-item border-0">Delivery: Yes</li>
           {{else}}
-          <li class="list-group-item">Delivery: No</li>
+          <li class="list-group-item border-0">Delivery: No</li>
           {{/if}}
 
           {{#if takeout_curbside }}
-          <li class="list-group-item">Takeout/Curbside: Yes</li>
+          <li class="list-group-item border-0">Takeout/Curbside: Yes</li>
           {{else}}
-          <li class="list-group-item">Takeout/Curbside: No</li>
+          <li class="list-group-item border-0">Takeout/Curbside: No</li>
           {{/if}}
+</div>
+<div class="col justify-content">
 
           {{#if reservations }}
-          <li class="list-group-item">Reservations: Yes</li>
+          <li class="list-group-item border-0">Reservations: Yes</li>
           {{else}}
-          <li class="list-group-item">Reservations: No</li>
+          <li class="list-group-item border-0">Reservations: No</li>
           {{/if}}
 
           {{#if on_site_parking }}
-          <li class="list-group-item">Parking: Yes</li>
+          <li class="list-group-item border-0">Parking: Yes</li>
           {{else}}
-          <li class="list-group-item">Parking: No</li>
+          <li class="list-group-item border-0">Parking: No</li>
           {{/if}}
 
 
-          <li class="list-group-item">{{format_phone res_phone}}</li>
+          <li class="list-group-item border-0">{{format_phone res_phone}}</li>
+          <li class="list-group-item border-0"><a href="https://{{ res_website }}" class="card-link"> Visit Restaurant Website </a></li>
+
         </ul>
-        <div class="card-body restaurantLinks">
+        {{!-- <div class="card-body restaurantLinks">
         <div class="card-body">
-          <a href="https://{{ res_website }}" class="card-link"> Visit Restaurant Website </a>
+          <a href="https://{{ res_website }}" class="card-link"> Visit Restaurant Website </a> --}}
           {{!-- <a href="#" class="card-link">Directions</a> --}}
           {{!-- <button href="#" class="direc-btn card-link"  value="{{res_address}}">Directions</button> --}}
+</div>
+</div>
+
         </div>
         </div>
       </div>
@@ -95,4 +103,3 @@
   <!-- End Aviary -->
   <br>
 
-</div>
