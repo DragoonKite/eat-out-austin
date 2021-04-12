@@ -1,9 +1,8 @@
 async function editReviewHandler(event) {
   event.preventDefault();
+ 
+  const review_content = document.querySelector('#review-text').value;
 
-  const review_content = document.getElementById('review-text').value.trim();
-
-  console.log(review_content);
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
@@ -28,5 +27,5 @@ async function editReviewHandler(event) {
 }
 
 document
-  .querySelector('.edit-review-form')
-  .addEventListener('submit', editReviewHandler);
+  .querySelector('#edit-btn')
+  .addEventListener('click', editReviewHandler);
