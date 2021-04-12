@@ -17,5 +17,5 @@ async function deleteFormHandler(event) {
 }
 
 document
-  .querySelector('.delete-review-btn')
+  .querySelector('#delete-btn')
   .addEventListener('click', deleteFormHandler);

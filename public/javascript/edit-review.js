@@ -11,7 +11,7 @@ async function editReviewHandler(event) {
   const response = await fetch(`/api/review/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
-      review_text,
+      review_text
     }),
     headers: {
       'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ async function editReviewHandler(event) {
 
   if (response.ok) {
     document.location.replace('/dashboard/');
-    alert(review_text)
+    alert("Success")
   } else {
     alert(response.statusText);
   }
