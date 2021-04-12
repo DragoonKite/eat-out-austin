@@ -11,9 +11,9 @@ async function editRestaurantHandler(event) {
     .value;
   const food_style_options = document.querySelector('select[name="food-style"]').options;
   const food_style = food_style_options[food_style_options.selectedIndex].value
-  const brick_mortar = document.querySelector('input[name="brick-mortar"]')
+  const brick_mortar = document.querySelector('input[id="brick-mortar"]')
     .checked;
-  const trailer = document.querySelector('input[name="trailer"]').checked;
+  const trailer = document.querySelector('input[id="trailer"]').checked;
   const delivery = document.querySelector('input[name="delivery"]').checked;
   const takeout_curbside = document.querySelector(
     'input[name="takeout-curbside"]'
