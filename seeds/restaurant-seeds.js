@@ -13,6 +13,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const restaurantData = [
     brick_mortar: true,
     takeout_curbside: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 5,
@@ -59,6 +63,7 @@ const restaurantData = [
     brick_mortar: true,
     takeout_curbside: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 6,
@@ -71,6 +76,7 @@ const restaurantData = [
     delivery: true,
     takeout_curbside: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 7,
@@ -82,6 +88,7 @@ const restaurantData = [
     brick_mortar: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 8,
@@ -95,6 +102,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 9,
@@ -107,6 +115,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 10,
@@ -119,6 +128,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 11,
@@ -131,6 +141,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: false
   },
   {
     id: 12,
@@ -143,6 +154,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 13,
@@ -155,6 +167,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 14,
@@ -166,6 +179,7 @@ const restaurantData = [
     brick_mortar: true,
     takeout_curbside: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 15,
@@ -178,6 +192,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 16,
@@ -191,6 +206,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 17,
@@ -202,6 +218,7 @@ const restaurantData = [
     brick_mortar: true,
     reservations: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 18,
@@ -213,6 +230,7 @@ const restaurantData = [
     trailer: true,
     takeout_curbside: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 19,
@@ -224,6 +242,7 @@ const restaurantData = [
     brick_mortar: true,
     takeout_curbside: true,
     on_site_parking: true,
+    res_approval: true
   },
   {
     id: 20,
@@ -235,6 +254,7 @@ const restaurantData = [
     trailer: true,
     takeout_curbside: true,
     on_site_parking: true,
+    res_approval: true
   },
 ];
 
