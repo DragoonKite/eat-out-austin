@@ -70,6 +70,11 @@ Restaurant.init(
       defaultValue: false,
     },
     // Service options end
+    // Approval by admin
+    res_approval: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
   {
     hooks: {},

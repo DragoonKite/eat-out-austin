@@ -1,85 +1,85 @@
 <div>
            
-           <!-- Start Aviary -->
-            <div class="container-fluid">
-              <div class="row">
-                <!-- Start Carousel -->
-                <div class="carousel slide col-md-5" data-ride="carousel">
-                  <h2>{{res_name}}</h2>
-                  <div class="carousel-inner leftSide">
-                    <div class="carousel-item active imageSize">
-                      <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
-                    </div>
-                    <div class="carousel-item imageSize">
-                      <img src="/{{format_name res_name}}/{{format_name res_name}}-interior.jpg" class="d-block w-100" alt="{{format_name res_name}} Interior">
-                    </div>
-                    <div class="carousel-item imageSize">
-                      <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
-                    </div>
-                  </div>
-                </div>
-                <!-- End Carousel -->
-                <!-- Start Card -->
-                <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
-                  <div class="card-body">
+  <!-- Start Aviary -->
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Start Carousel -->
+      <div class="carousel slide col-md-5" data-ride="carousel">
+        <h2>{{res_name}}</h2>
+        {{#if res_approval}}
+        <div class="carousel-inner leftSide">
+          <div class="carousel-item active imageSize">
+            <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
+          </div>
+          <div class="carousel-item imageSize">
+            <img src="/{{format_name res_name}}/{{format_name res_name}}-interior.jpg" class="d-block w-100" alt="{{format_name res_name}} Interior">
+          </div>
+          <div class="carousel-item imageSize">
+            <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
+          </div>
+        </div>
+        {{/if}}
+      </div>
+      <!-- End Carousel -->
+      
+      <!-- Start Card -->
+      <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
+        <div class="card-body">
 
-                    {{#each reviews}}
-                    <p class="card-text restaurantReview">"{{ this.review_content }}"
-                    </p>
-                    {{/each}}
+        {{#each reviews}}
+        <p class="card-text restaurantReview">"{{ this.review_content }}"
+        </p>
+        {{/each}}
 
 {{!-- No luck yet displaying the user displayName on each review --}}
-                  {{!-- <h3>
-                    {{#user}}
-                    {{#if @first}}
-                    {{this.displayName}}
-                    {{/if}}
-                    {{/user}}</h3> --}}
+        {{!-- <h3>
+          {{#user}}
+          {{#if @first}}
+          {{this.displayName}}
+          {{/if}}
+          {{/user}}</h3> --}}
 
-                  </div>
+        </div>
 
-                  <ul class="list-group list-group-flush restaurantInfo">
+        <ul class="list-group list-group-flush restaurantInfo">
+          
+          <li class="list-group-item">Address: {{ res_address}}</li>
+          
                     
-                    <li class="list-group-item">Address: {{ res_address}}</li>
-                    
-                    
 
-                    {{#if brick_mortar }}
-                    <li class="list-group-item">Brick and Mortar: Yes</li>
-                    {{ else }}
-                    <li class="list-group-item">Brick and Mortar: No</li>
-                    {{/if}}
+          {{#if trailer }}
+          <li class="list-group-item">Trailer: Yes</li>
+          {{ else }}
+          <li class="list-group-item">Trailer: No</li>
+          {{/if}}
 
-                    {{#if trailer }}
-                    <li class="list-group-item">Trailer: Yes</li>
-                    {{ else }}
-                    <li class="list-group-item">Trailer: No</li>
-                    {{/if}}
+          {{#if delivery }}
+          <li class="list-group-item">Delivery: Yes</li>
+          {{else}}
+          <li class="list-group-item">Delivery: No</li>
+          {{/if}}
 
-                    {{#if delivery }}
-                    <li class="list-group-item">Delivery: Yes</li>
-                    {{else}}
-                    <li class="list-group-item">Delivery: No</li>
-                    {{/if}}
+          {{#if takeout_curbside }}
+          <li class="list-group-item">Takeout/Curbside: Yes</li>
+          {{else}}
+          <li class="list-group-item">Takeout/Curbside: No</li>
+          {{/if}}
 
-                    {{#if takeout_curbside }}
-                    <li class="list-group-item">Takeout/Curbside: Yes</li>
-                    {{else}}
-                    <li class="list-group-item">Takeout/Curbside: No</li>
-                    {{/if}}
+          {{#if reservations }}
+          <li class="list-group-item">Reservations: Yes</li>
+          {{else}}
+          <li class="list-group-item">Reservations: No</li>
+          {{/if}}
 
-                    {{#if reservations }}
-                    <li class="list-group-item">Reservations: Yes</li>
-                    {{else}}
-                    <li class="list-group-item">Reservations: No</li>
-                    {{/if}}
+          {{#if on_site_parking }}
+          <li class="list-group-item">Parking: Yes</li>
+          {{else}}
+          <li class="list-group-item">Parking: No</li>
+          {{/if}}
 
-                    {{#if on_site_parking }}
-                    <li class="list-group-item">Parking: Yes</li>
-                    {{else}}
-                    <li class="list-group-item">Parking: No</li>
-                    {{/if}}
 
+<<<<<<< HEAD
                     <li class="list-group-item">{{format_phone res_phone}}</li>
                   </ul>
                   <div class="card-body restaurantLinks">
@@ -95,5 +95,22 @@
             </div>
             <!-- End Aviary -->
             <br>
+=======
+          <li class="list-group-item">{{format_phone res_phone}}</li>
+        </ul>
+        <div class="card-body restaurantLinks">
+        <div class="card-body">
+          <a href="#" class="card-link">Restaurant Website: {{ res_website }}</a>
+          {{!-- <a href="#" class="card-link">Directions</a> --}}
+          {{!-- <button href="#" class="direc-btn card-link"  value="{{res_address}}">Directions</button> --}}
+        </div>
+        </div>
+      </div>
+      <!-- End Card -->
+    </div>
+  </div>
+  <!-- End Aviary -->
+  <br>
+>>>>>>> fa7aeef6e02be97207ecfc229b08b88197a6e24c
 
 </div>

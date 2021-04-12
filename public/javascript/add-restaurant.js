@@ -52,5 +52,5 @@ async function newRestaurantHandler(event) {
 }
 
 document
-  .querySelector('.new-restaurant-form')
+  .querySelector('#create-btn')
   .addEventListener('submit', newRestaurantHandler);

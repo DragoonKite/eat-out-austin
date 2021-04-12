@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
         'takeout_curbside',
         'reservations',
         'on_site_parking',
+        'res_approval',
         [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
 
       ],
@@ -43,7 +44,7 @@ router.get('/', (req, res) => {
 });
 
 // get restaurants by food style
-router.get('/fs/:foodstyle', (req, res) => {
+router.get('/fs/:foodstyle', withAuth, (req, res) => {
   Restaurant.findAll({
     where: {
       food_style: req.params.foodstyle,
@@ -57,7 +58,7 @@ router.get('/fs/:foodstyle', (req, res) => {
       const restaurant = restData.map((restaurant) =>
         restaurant.get({ plain: true })
       );
-      res.render('restaurant', { restaurant });
+      res.render('restaurant', { restaurant, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);

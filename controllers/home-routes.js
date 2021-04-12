@@ -19,6 +19,7 @@ router.get('/', (req, res) => {
       'takeout_curbside',
       'reservations',
       'on_site_parking',
+      'res_approval',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
     ],
     // include: [
@@ -57,6 +58,7 @@ router.get('/restaurants/', (req, res) => {
         'takeout_curbside',
         'reservations',
         'on_site_parking',
+        'res_approval',
         [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
 
       ],
