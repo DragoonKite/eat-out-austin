@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 });
 
 // get restaurants by food style
-router.get('/fs/:foodstyle', (req, res) => {
+router.get('/fs/:foodstyle', withAuth, (req, res) => {
   Restaurant.findAll({
     where: {
       food_style: req.params.foodstyle,
@@ -53,7 +53,7 @@ router.get('/fs/:foodstyle', (req, res) => {
       const restaurant = restData.map((restaurant) =>
         restaurant.get({ plain: true })
       );
-      res.render('restaurant', { restaurant });
+      res.render('restaurant', { restaurant, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
