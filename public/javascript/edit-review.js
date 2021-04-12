@@ -1,9 +1,9 @@
 async function editReviewHandler(event) {
   event.preventDefault();
 
-  const review_text = document
-    .querySelector('input[name="review-text"]')
-    .value.trim();
+  const review_text = document.getElementById('review-text').value.trim();
+
+  console.log(review_text);
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
@@ -20,6 +20,7 @@ async function editReviewHandler(event) {
 
   if (response.ok) {
     document.location.replace('/dashboard/');
+    alert(review_text)
   } else {
     alert(response.statusText);
   }

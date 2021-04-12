@@ -48,12 +48,35 @@ router.get('/edit/:id', withAuth, (req, res) => {
       {
         model: Review,
         attributes: ['review_content'],
-        include: {
-          model: User,
-          attributes: ['displayName'],
-        },
       },
     ],
+  })
+    .then((dbRestData) => {
+      console.log(dbRestData)
+      if (!dbRestData) {
+        res.status(404).json({ message: 'No restaurant found with this id' });
+        return;
+      }
+
+      // serialize the data
+      const restaurant = dbRestData.get({ plain: true });
+      // pass data to template
+      res.render('edit-restaurant', {
+        restaurant,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/edit-review/:id', withAuth, (req, res) => {
+  Review.findOne({
+    where: {
+      id: req.params.id,
+    },
   })
     .then((dbRestData) => {
       if (!dbRestData) {
@@ -62,11 +85,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
 
       // serialize the data
-      const restaurant = dbRestData.get({ plain: true });
-
+      const review = dbRestData.get({ plain: true });
+      console.log(review)
       // pass data to template
-      res.render('edit-restaurant', {
-        restaurant,
+      res.render('edit-review', {
+        review,
         loggedIn: req.session.loggedIn,
       });
     })
