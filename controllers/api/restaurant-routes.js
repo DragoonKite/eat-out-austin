@@ -1,7 +1,3 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable no-shadow */
-/* eslint-disable prettier/prettier */
-/* eslint-disable quotes */
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Restaurant, User, Review, Vote } = require("../../models");
@@ -34,7 +30,7 @@ router.get('/', (req, res) => {
       }
     })
     .then(homeData => {
-        res.render('restaurant');
+        //res.render('restaurant', {homeData});
         res.json(homeData);
       })
       .catch(err => {
@@ -58,7 +54,7 @@ router.get('/fs/:foodstyle', withAuth, (req, res) => {
       const restaurant = restData.map((restaurant) =>
         restaurant.get({ plain: true })
       );
-      res.render('restaurant', { restaurant, loggedIn: true });
+      res.render('restaurant', { restaurant, loggedIn: true});
     })
     .catch((err) => {
       console.log(err);
@@ -85,6 +81,7 @@ router.get('/:id', (req, res) => {
       'takeout_curbside',
       'reservations',
       'on_site_parking',
+      'res_approval',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
 
     ],
@@ -152,6 +149,7 @@ router.put('/upvote', (req, res) => {
           'takeout_curbside',
           'reservations',
           'on_site_parking',
+          'res_approval',
           // use raw MySQL aggregate function query to get a count of how many votes the post has and return it under the name `vote_count`
           [
             sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'),
