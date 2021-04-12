@@ -1,7 +1,10 @@
+//API Call
 async function foodStyleHandler(event) {
   event.preventDefault();
+  //Getting info
   const food_style = this.value;
 
+  //Sending info to api
   const response = await fetch(`/api/restaurant/fs/${food_style}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
@@ -15,33 +18,7 @@ async function foodStyleHandler(event) {
   }
 }
 
-/* async function foodStyleHandler(event) {
-    event.preventDefault();
-
-    let e = document.querySelector('.dropdown-menu');
-    let food_style = e.options[e.selectedIndex].value;
-
-    console.log(food_style);
-   const response = await fetch('/api/restaurant/fs/'+ food_style, {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    }) 
-    console.log(response.data)
-
-
-
-    //console.log(response.json())
-    /*if (response.ok){
-        document.location.replace('/restaurants')
-    } else{
-        alert(response.statusText)
-    } */
-
-// document.location.replace('/restaurants/'+food_style)
-/* foodStyleHandler().then(data => {
-    console.log(data)
-}); */
-
+//Event Listener
 buttons = document.querySelectorAll('.dropdown-item');
 for (button of buttons) {
   button.addEventListener('click', foodStyleHandler);

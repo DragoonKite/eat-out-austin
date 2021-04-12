@@ -1,10 +1,14 @@
-async function upvoteClickHandler(event) {
+//FUTURE DEVELOPMENT
+
+/* async function upvoteClickHandler(event) {
     event.preventDefault();
   
+    //Getting Info
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
   
+    //Senfing info to api
     const response = await fetch('/api/restaurant/upvote', {
         method: 'PUT',
         body: JSON.stringify({
@@ -20,6 +24,7 @@ async function upvoteClickHandler(event) {
       } else {
         alert(response.statusText);
       }
-  }
+}
 
-  document.querySelector('.upvote').addEventListener('click', upvoteClickHandler);
+//Event Listener
+document.querySelector('.upvote').addEventListener('click', upvoteClickHandler); */

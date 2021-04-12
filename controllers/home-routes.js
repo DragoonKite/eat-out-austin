@@ -3,6 +3,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Restaurant, User, Review, Vote} = require('../models');
 
+//Get all reastaurants w/o reviews 
 router.get('/', (req, res) => {
   console.log(req.session)
   Restaurant.findAll({
@@ -43,6 +44,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//Get all restaurants w/ reviews 
 router.get('/restaurants/', (req, res) => {
     Restaurant.findAll({
       attributes: [
@@ -80,7 +82,7 @@ router.get('/restaurants/', (req, res) => {
       });
 }); 
 
-
+//Login route
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.render('dashboard');

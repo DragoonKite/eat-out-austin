@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 const router = require('express').Router();
-const { response } = require('express');
 const { Restaurant, User, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -37,6 +36,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//Create user
 router.post('/', (req, res) => {
   // expects {displayName: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
   User.create({
@@ -62,6 +62,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//Login
 router.post('/login', (req, res) => {
   // expects {email: 'homeboy@gmail.com', password: 'password1234'}
   User.findOne({
@@ -93,6 +94,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+//Logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -104,6 +106,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//Update user
 router.put('/:id', withAuth , (req, res) => {
   // expects {username: 'homeboy', email: 'homeboy@gmail.com', password: 'password1234'}
 
@@ -126,6 +129,7 @@ router.put('/:id', withAuth , (req, res) => {
     });
 });
 
+//Delete user
 router.delete('/:id', withAuth , (req, res) => {
   User.destroy({
     where: {

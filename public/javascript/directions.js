@@ -1,4 +1,6 @@
-let userIP = "";
+//FUTURE DEVELOPMENT
+
+/* let userIP = "";
 let userLat = 0;
 let userLon = 0;
 
@@ -80,7 +82,7 @@ $(".direc-btn").on('click', function(){
         let direction = $("<li>").textContent = (i+1) + ") " + data.routes[0].guidance.instructionGroups[i].groupMessage + '<br>'
         directionsList.append(direction)
     }   
- */
 
 
-getLocation();
+
+getLocation(); */

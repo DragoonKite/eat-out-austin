@@ -25,6 +25,7 @@ liveReloadServer.server.once('connection', () => {
   }, 100);
 });
 
+//Middleware
 const app = express();
 app.use(connectLivereload());
 app.use(passport.initialize());

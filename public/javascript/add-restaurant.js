@@ -1,6 +1,7 @@
 async function newRestaurantHandler(event) {
   event.preventDefault();
 
+  //Pulling information from form
   const res_name = document.querySelector('input[name="restaurant-name"]')
     .value;
   const res_phone = document.querySelector('input[name="restaurant-phone"]')
@@ -23,8 +24,7 @@ async function newRestaurantHandler(event) {
     'input[name="on-site-parking"]'
   ).checked;
 
-  console.log(brick_mortar, trailer, delivery, takeout_curbside,reservations, on_site_parking)
-
+  //Sending information to api
   const response = await fetch('/api/restaurant', {
     method: 'POST',
     body: JSON.stringify({
@@ -53,6 +53,7 @@ async function newRestaurantHandler(event) {
   }
 }
 
+//Event Listener
 document
   .querySelector('#create-btn')
   .addEventListener('click', newRestaurantHandler);

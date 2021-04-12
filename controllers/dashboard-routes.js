@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 const { Review, User, Restaurant } = require('../models');
 const withAuth = require('../utils/auth');
 
+//Get all restaurants with reviews
 router.get('/', withAuth, (req, res) => {
   Restaurant.findAll({
     attributes: [
@@ -38,7 +39,7 @@ router.get('/', withAuth, (req, res) => {
   });
 });
 
-
+//get one restaurant for editing
 router.get('/edit/:id', withAuth, (req, res) => {
   Restaurant.findOne({
     where: {
@@ -72,6 +73,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
+//get one Review for editing
 router.get('/edit-review/:id', withAuth, (req, res) => {
   Review.findOne({
     where: {
@@ -98,4 +100,5 @@ router.get('/edit-review/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
 module.exports = router;

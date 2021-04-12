@@ -1,6 +1,7 @@
 async function editRestaurantHandler(event) {
   event.preventDefault();
 
+  //GEtting information
   const res_name = document.querySelector('input[name="restaurant-name"]')
     .value;
   const res_phone = document.querySelector('input[name="restaurant-phone"]')
@@ -28,6 +29,7 @@ async function editRestaurantHandler(event) {
     window.location.toString().split('/').length - 1
   ].split('?')[0];
 
+  //Senfing info to api
   const response = await fetch(`/api/restaurant/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -56,6 +58,7 @@ async function editRestaurantHandler(event) {
   }
 }
 
+//Event Listener
 document
   .querySelector('#edit-btn')
   .addEventListener('click', editRestaurantHandler);

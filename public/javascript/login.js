@@ -1,14 +1,17 @@
+//Signup
 async function signupFormHandler(event) {
-  // console.log("test");
-    // event.preventDefault();
+    event.preventDefault();
   
+    //Getting info
     const displayName = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const firstName = document.querySelector('#firstName-signup').value.trim();
     const lastName = document.querySelector('#lastName-signup').value.trim();
   
+    //Checking if required info is present
     if (displayName && firstName && lastName && email && password) {
+      //Sending info to api
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
@@ -29,13 +32,17 @@ async function signupFormHandler(event) {
     }
   }
 
+//Login
 async function loginFormHandler(event) {
     event.preventDefault();
   
+    //Getting info
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
+    //Checking if needed info is present
     if (email && password) {
+      //Sending info to api
       const response = await fetch('/api/users/login', {
         method: 'post',
         body: JSON.stringify({
@@ -52,6 +59,7 @@ async function loginFormHandler(event) {
     }
 }
 
+//Event listeners
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
   
 document.querySelector('#signUp').addEventListener('submit', signupFormHandler);

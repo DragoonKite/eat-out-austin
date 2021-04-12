@@ -1,3 +1,4 @@
+//Custom Helpers for Handlebars
 module.exports = {
   format_name: (name) => name.replace(/\s/g, '-').toLowerCase(),
 
