@@ -50,12 +50,12 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-// update review (not sure if we will need?)
+// update review 
 router.put('/:id', withAuth, (req, res) => {
   Review.update(req.body, {
     individualHooks: true,
     where: {
-      id: req.params.id,
+      id: req.params.id
     },
   })
     .then((ReviewData) => {

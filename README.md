@@ -76,7 +76,7 @@ Every site focused on dining out has a list of places to try in any city, but to
 
 ## Contact
 Created by: <br>
-[Frank Depaulo](https://dragoonkite.github.io/portfolio/nk) - feel free to contact me!<br>
+[Frank Depaolo](https://dragoonkite.github.io/portfolio/nk) - feel free to contact me!<br>
 [Jason Fletcher](https://blueink38.github.io/new-portfolio/) - feel free to contact me!<br>
 [Ramon Flowers](https://rocketorangemen.github.io/Portfolio/) - feel free to contact me!<br>
 [Cory Neel](https://cocobeware83.github.io/coryneel) - feel free to contact me!<br>

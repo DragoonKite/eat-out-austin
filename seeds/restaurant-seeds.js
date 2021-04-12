@@ -141,7 +141,7 @@ const restaurantData = [
     takeout_curbside: true,
     reservations: true,
     on_site_parking: true,
-    res_approval: false
+    res_approval: true
   },
   {
     id: 12,
