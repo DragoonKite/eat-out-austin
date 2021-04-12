@@ -1,9 +1,9 @@
 async function editReviewHandler(event) {
   event.preventDefault();
 
-  const review_text = document.getElementById('review-text').value.trim();
+  const review_content = document.getElementById('review-text').value.trim();
 
-  console.log(review_text);
+  console.log(review_content);
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
@@ -11,16 +11,17 @@ async function editReviewHandler(event) {
   const response = await fetch(`/api/review/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
-      review_text
+      review_content
     }),
     headers: {
       'Content-Type': 'application/json',
+    //   console.log(body);
     },
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard/');
-    alert("Success")
+    document.location.replace('/dashboard');
+    alert("Review successfully submitted!")
   } else {
     alert(response.statusText);
   }

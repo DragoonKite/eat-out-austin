@@ -51,7 +51,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // update review (not sure if we will need?)
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   Review.update(req.body, {
     individualHooks: true,
     where: {
@@ -59,6 +59,7 @@ router.put('/:id', withAuth, (req, res) => {
     },
   })
     .then((ReviewData) => {
+      console.log(ReviewData)
       if (!ReviewData) {
         res.status(404).json({ message: 'No Review found with this id' });
         return;
