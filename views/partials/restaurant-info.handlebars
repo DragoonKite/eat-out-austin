@@ -3,9 +3,11 @@
   <!-- Start Aviary -->
   <div class="container-fluid">
     <div class="row">
+      
       <!-- Start Carousel -->
       <div class="carousel slide col-md-5" data-ride="carousel">
         <h2>{{res_name}}</h2>
+        {{#if res_approval}}
         <div class="carousel-inner leftSide">
           <div class="carousel-item active imageSize">
             <img src="/{{format_name res_name}}/{{format_name res_name}}-front.jpg" class="d-block w-100" alt="{{format_name res_name}} Front">
@@ -17,8 +19,10 @@
             <img src="/{{format_name res_name}}/{{format_name res_name}}-food.jpg" class="d-block w-100" alt="{{format_name res_name}} Food">
           </div>
         </div>
+        {{/if}}
       </div>
       <!-- End Carousel -->
+      
       <!-- Start Card -->
       <div class="card border border-secondary col-md-6" id="rightSide" style="width: 25rem;">
         <div class="card-body">
