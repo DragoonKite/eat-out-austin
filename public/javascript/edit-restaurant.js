@@ -49,7 +49,8 @@ async function editRestaurantHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard/');
+    document.location.replace('/dashboard/')
+    alert("Restaurant information successfully updated!");
   } else {
     alert(response.statusText);
   }

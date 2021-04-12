@@ -11,6 +11,7 @@ async function deleteFormHandler(event) {
 
   if (response.ok) {
     document.location.replace('/dashboard/');
+    alert("You've successfully deleted this restaurant!")
   } else {
     alert(response.statusText);
   }
