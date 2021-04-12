@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
       }
     })
     .then(homeData => {
-        res.render('restaurant');
+        //res.render('restaurant', {homeData});
         res.json(homeData);
       })
       .catch(err => {
@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
 });
 
 // get restaurants by food style
-router.get('/fs/:foodstyle', (req, res) => {
+router.get('/fs/:foodstyle', withAuth, (req, res) => {
   Restaurant.findAll({
     where: {
       food_style: req.params.foodstyle,
@@ -58,7 +58,7 @@ router.get('/fs/:foodstyle', (req, res) => {
       const restaurant = restData.map((restaurant) =>
         restaurant.get({ plain: true })
       );
-      res.render('restaurant', { restaurant });
+      res.render('restaurant', { restaurant, loggedIn: true});
     })
     .catch((err) => {
       console.log(err);
@@ -85,6 +85,7 @@ router.get('/:id', (req, res) => {
       'takeout_curbside',
       'reservations',
       'on_site_parking',
+      'res_approval',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'), 'vote_count']
 
     ],
@@ -152,6 +153,7 @@ router.put('/upvote', (req, res) => {
           'takeout_curbside',
           'reservations',
           'on_site_parking',
+          'res_approval',
           // use raw MySQL aggregate function query to get a count of how many votes the post has and return it under the name `vote_count`
           [
             sequelize.literal('(SELECT COUNT(*) FROM vote WHERE restaurant.id = vote.restaurant_id)'),

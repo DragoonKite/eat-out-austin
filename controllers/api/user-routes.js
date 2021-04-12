@@ -89,7 +89,7 @@ router.post('/login', (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!' });
       alert('You are now logged in') 
     });
-    res.replace('/dashboard/')
+    //res.replace('/')
   });
 });
 

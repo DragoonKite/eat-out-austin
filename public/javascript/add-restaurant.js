@@ -10,9 +10,9 @@ async function newRestaurantHandler(event) {
   const res_address = document.querySelector('input[name="restaurant-address"]')
     .value;
   const food_style = document.getElementById('food-style').value;
-  const brick_mortar = document.querySelector('input[name="brick-mortar"]')
+  const brick_mortar = document.querySelector('input[id="brick-mortar"]')
     .checked;
-  const trailer = document.querySelector('input[name="trailer"]').checked;
+  const trailer = document.querySelector('input[id="trailer"]').checked;
   const delivery = document.querySelector('input[name="delivery"]').checked;
   const takeout_curbside = document.querySelector(
     'input[name="takeout-curbside"]'
@@ -22,6 +22,8 @@ async function newRestaurantHandler(event) {
   const on_site_parking = document.querySelector(
     'input[name="on-site-parking"]'
   ).checked;
+
+  console.log(brick_mortar, trailer, delivery, takeout_curbside,reservations, on_site_parking)
 
   const response = await fetch('/api/restaurant', {
     method: 'POST',
@@ -53,4 +55,4 @@ async function newRestaurantHandler(event) {
 
 document
   .querySelector('#create-btn')
-  .addEventListener('submit', newRestaurantHandler);
+  .addEventListener('click', newRestaurantHandler);
