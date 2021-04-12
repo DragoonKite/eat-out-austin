@@ -1,3 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="/">Eat Out, Austin</a>
+    <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+      type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+      aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        {{#if loggedIn}}
+        <li class="nav-item  mx-0 mx-lg-1">
+          <a class="nav-link  py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item  mx-0 mx-lg-1">
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" id="logout" class="">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+  <div class="dropdown text-center">
+    <button class="btn2 dropdown-toggle btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      What Are You Hungry For?
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <button class="dropdown-item" href="/restaurant#farm-to-table" target="_blank" value="Farm to Table">Farm To Table
+      </button>
+      <button class="dropdown-item" href="/restaurant#southern" target="_blank"
+        value="Southern American">Southern</button>
+      <button class="dropdown-item" href="/restaurant#veggie" target="_blank" value="Vegetarian & Vegan">Vegan and
+        Vegetarian</button>
+      <button class="dropdown-item" href="/restaurant#asian" target="_blank" value="Asian">Asian & Asian Fusion</button>
+      <button class="dropdown-item" href="/restaurant#bbq" target="_blank" value="TX BBQ">BBQ</button>
+      <button class="dropdown-item" href="/restaurant#seafood" target="_blank" value="Seafood">Seafood</button>
+      <button class="dropdown-item" href="/restaurant#latin-american" target="_blank" value="Mexican">Mexican</button>
+      <button class="dropdown-item" href="/restaurant#french" target="_blank" value="French">French</button>
+      <button class="dropdown-item" href="/restaurant#italian" target="_blank" value="Italian">Italian</button>
+      <button class="dropdown-item" href="/restaurant#indian" target="_blank" value="Indian">Indian</button>
+      <button class="dropdown-item" href="/restaurant#japanese" target="_blank" value="Sushi">Sushi</button>
+      <button class="dropdown-item" href="/restaurant#burgers" target="_blank" value="Burgers">Burgers</button>
+    </div>
+  </div>
+</nav>
+
 <br>
 <section class="mt-5 container " style="padding-left: 2%; padding-top: 100px">
     <section>
