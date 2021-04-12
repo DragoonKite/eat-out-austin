@@ -9,7 +9,8 @@ async function editRestaurantHandler(event) {
     .value;
   const res_address = document.querySelector('input[name="restaurant-address"]')
     .value;
-  const food_style = document.querySelector('input[name="food-style"]').value;
+  const food_style_options = document.querySelector('select[name="food-style"]').options;
+  const food_style = food_style_options[food_style_options.selectedIndex].value
   const brick_mortar = document.querySelector('input[name="brick-mortar"]')
     .checked;
   const trailer = document.querySelector('input[name="trailer"]').checked;
@@ -25,9 +26,9 @@ async function editRestaurantHandler(event) {
 
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
-  ];
+  ].split('?')[0];
 
-  const response = await fetch(`/api/reastaurant/${id}`, {
+  const response = await fetch(`/api/restaurant/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
       res_name,
@@ -55,5 +56,5 @@ async function editRestaurantHandler(event) {
 }
 
 document
-  .querySelector('.edit-restaurant-form')
-  .addEventListener('submit', editRestaurantHandler);
+  .querySelector('#edit-btn')
+  .addEventListener('click', editRestaurantHandler);

@@ -9,7 +9,7 @@ async function signupFormHandler(event) {
     const lastName = document.querySelector('#lastName-signup').value.trim();
   
     if (displayName && firstName && lastName && email && password) {
-      await fetch('/api/users', {
+      const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
         displayName,
@@ -44,9 +44,8 @@ async function loginFormHandler(event) {
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-  
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
@@ -57,6 +56,3 @@ document.querySelector('.login-form').addEventListener('submit', loginFormHandle
   
 document.querySelector('#signUp').addEventListener('submit', signupFormHandler);
 
-// $("#signUp").on("click", function() {
-//   signupFormHandler();
-// })
