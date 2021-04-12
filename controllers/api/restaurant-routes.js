@@ -188,7 +188,7 @@ router.put('/:id', withAuth, (req, res) => {
 
 // delete restaurant
 router.delete('/:id', withAuth, (req, res) => {
-  Post.destroy({
+  Restaurant.destroy({
     where: {
       id: req.params.id,
     },
